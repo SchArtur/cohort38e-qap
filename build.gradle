@@ -11,7 +11,10 @@ repositories {
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
+//    JUint - библиотека для тестирования
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+//    Selenium для работы с браузером
     implementation 'org.seleniumhq.selenium:selenium-java:4.19.0'
 }
 
