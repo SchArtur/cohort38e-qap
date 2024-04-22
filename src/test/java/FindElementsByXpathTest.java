@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class FindElementsByXpathTest extends Base {
+public class FindElementsByXpathTest extends BaseTest {
     @BeforeEach
     void start() {
         driver.get(URL_WEB_SHOP);
