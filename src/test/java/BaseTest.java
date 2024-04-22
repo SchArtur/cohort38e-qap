@@ -8,8 +8,8 @@ import org.junit.jupiter.api.*;
 
 public class BaseTest {
     protected static final String LOGIN = "https://telranedu.web.app/login";
+    protected static final String ADD = "https://telranedu.web.app/add";
     protected static final String URL_WEB_SHOP = "https://demowebshop.tricentis.com/";
-
     public WebDriver driver;
     public WebDriverWait wait;
 
