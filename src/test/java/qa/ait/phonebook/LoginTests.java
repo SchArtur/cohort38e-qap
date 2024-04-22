@@ -29,12 +29,6 @@ public class LoginTests extends BaseTest {
         Assertions.assertTrue(logOutElement.isDisplayed(), "Отсутствует копка выход");
         logOutElement.click();
     }
-
-    @Test
-    void addContact() {
-
-    }
-
     @ParameterizedTest //указание что данный Тест параметризированный.
     @CsvSource({
             URL_LITECART_ADMIN + ", username, admin, password, admin38Qa, //*[@title='Logout']",

@@ -28,8 +28,8 @@ public class BaseTest {
         driver = new ChromeDriver();
 //        driver = new SafariDriver();
         driver.manage().window().maximize(); // разворачивает окно на весь экран
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // неявное ожидание 5 секунд на загрузку элементов
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));// явное ожидания, по условиям
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // неявное ожидание 5 секунд на загрузку элементов. Это вид ожидания, который позволяет приостановить работу WebDriver на определённый период времени, пока WebDriver не найдёт нужный элемент на веб-странице
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));// явное ожидания, по условиям. Это вид динамического ожидания в Selenium, которое позволяет остановить выполнение скрипта по определённому условию на заданный промежуток времени
     }
 
     @AfterEach
@@ -50,10 +50,13 @@ public class BaseTest {
     }
 
     //    Метод заполняет поля ввода по By.name значением value
+//    TODO сменить параметр на By locator
     protected void fillInputFieldByName(String name, String value) {
         WebElement element = waitForVisibilityElement(driver.findElement(By.name(name)));//Получаем элемент по By.name который будем заполнять
         element.clear();// очищаем поле ввода, от возможных предустановленных значений
         element.sendKeys(value);//заполняем поле ввода переданным значением в параметрах
         Assertions.assertEquals(value, element.getAttribute("value"));// Проверяем что значение нашего поля ввода, точно заполнилось нашим значением
     }
+
+//    TODO click и getElement
 }
