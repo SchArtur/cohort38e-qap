@@ -1,11 +1,12 @@
 package qa.ait;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,20 +32,28 @@ public class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));// явное ожидания, по условиям
     }
 
-    @AfterEach // эта аннатация - указание, что метод выполниться после каждого теста
+    @AfterEach
+        // эта аннатация - указание, что метод выполниться после каждого теста
 //    @AfterAll даже если ваш тест упал секция AFTER выполнится (кроме системных ошибок)
     void afterVoid() {
         driver.quit();
     }
 
-//    Метод ожидант что элемент станет видимым пользователю
-    public WebElement waitForVisibilityElement(WebElement element) {
+    //    Метод ожидант что элемент станет видимым пользователю
+    protected WebElement waitForVisibilityElement(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-//    Метож проверяет что элемент готов к клику.
-    public WebElement waitForClickableElement(WebElement element) {
+    //    Метод проверяет что элемент готов к клику.
+    protected WebElement waitForClickableElement(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    //    Метод заполняет поля ввода по By.name значением value
+    protected void fillInputFieldByName(String name, String value) {
+        WebElement element = waitForVisibilityElement(driver.findElement(By.name(name)));//Получаем элемент по By.name который будем заполнять
+        element.clear();// очищаем поле ввода, от возможных предустановленных значений
+        element.sendKeys(value);//заполняем поле ввода переданным значением в параметрах
+        Assertions.assertEquals(value, element.getAttribute("value"));// Проверяем что значение нашего поля ввода, точно заполнилось нашим значением
+    }
 }
