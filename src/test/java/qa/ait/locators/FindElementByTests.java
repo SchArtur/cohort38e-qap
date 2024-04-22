@@ -17,7 +17,7 @@ public class FindElementByTests extends BaseTest {
     }
 
     @Test
-    public void findElementByTagName() {
+    public void test1() {
         WebElement element = driver.findElement(By.tagName("h1"));
         Assertions.assertTrue(element.isDisplayed(), "Элемент не отображается на странице"); // проверка отображения элемента на странице
         //assertTrue - проверка, что ожидается true
