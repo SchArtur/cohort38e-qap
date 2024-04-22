@@ -43,6 +43,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
         }
         @Test
+        @DisplayName("Нахождения 10 элементов по Xpath на сайте https://demowebshop.tricentis.com/")
         void findElementByXpath(){
             driver.navigate().to("https://demowebshop.tricentis.com/");
 
