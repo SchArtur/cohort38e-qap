@@ -1,13 +1,12 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AddContactTest extends BaseTest {
     @Test
     void addContacts() {
+        login();
         driver.navigate().to(ADD);
         fillInputs("name", "Mickey");
         fillInputs("lastName", "Mouse");
@@ -18,6 +17,13 @@ public class AddContactTest extends BaseTest {
         WebElement save = waitForVisibilityElement(driver.findElement(By.xpath("//button[b='Save']")));
         Assertions.assertTrue(save.isDisplayed(), "Отсутствует копка выход");
         save.click();
+    }
+
+    void login() {
+        driver.navigate().to(LOGIN);
+        fillInputs("email", "manuel@gm.com");
+        fillInputs("password", "Manuel1234$");
+        waitForClickableElement(driver.findElement(By.name("login"))).click();
     }
 
     void fillInputs(String name, String value) {

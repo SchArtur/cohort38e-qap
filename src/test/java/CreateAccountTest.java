@@ -7,7 +7,7 @@ public class CreateAccountTest extends BaseTest {
     @Test
     void verifyRegistrationForm() {
         driver.navigate().to(LOGIN);
-        fillInputFields("email", "Mickeyy55@gmail.com");
+        fillInputFields("email", "Mickey5555@gmail.com");
         fillInputFields("password", "Mause555#");
         waitForClickableElement(driver.findElement(By.name("registration"))).click();
         WebElement signOutElement = waitForVisibilityElement(driver.findElement(By.xpath("//button[text()='Sign Out']")));
