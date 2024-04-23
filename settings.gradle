@@ -1,2 +1,3 @@
 rootProject.name = 'cohort38e-qap'
+include 'QA38_Phonebook'
 

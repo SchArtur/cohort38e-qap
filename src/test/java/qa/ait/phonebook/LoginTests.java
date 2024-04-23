@@ -6,8 +6,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import qa.ait.BaseTest;
 
 import static qa.ait.utill.Constants.URL_PHONEBOOK;
@@ -32,7 +34,6 @@ public class LoginTests extends BaseTest {
         Assertions.assertTrue(getElement(By.xpath("//button[text()='Sign Out']")).isDisplayed());
     }
 
-//    TODO
     @Test
     @Tag("LoginTests")
     @DisplayName("Проверка ввода неверного пароля")
@@ -45,9 +46,9 @@ public class LoginTests extends BaseTest {
         fillInputField(By.name("email"), "manuel@gm.com");
 //        вводим пароль
         fillInputField(By.name("password"), "Manuel12");
-//        нажимаем кнопку логин
+        //нажимаем кнопку логин
         clickOnElement(By.name("login"));
-
+        //Проверяем текст Алерта(Уведомления)
+        Assertions.assertEquals("Wrong email or password", getAlert().getText(), "Текст ошибки не соответствует ожидаемому");
     }
-
 }
