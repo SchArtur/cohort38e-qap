@@ -1,9 +1,9 @@
 package phonebook;
 
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
 
-public class ContactTests extends BaseTest {
+@Tag("@ContactTests")
+public class DeleteContactTests extends BaseTest {
 
    private final Contact TEST_CONTACT = new Contact("Test", "Testoviy", "111111111111", "test@test.com", "Addresss", "Descr");
 
@@ -14,7 +14,6 @@ public class ContactTests extends BaseTest {
     }
 
     @Test
-    @Tag("ContactTests")
     @DisplayName("Успешное удаление контакта")
     void test1() {
         clickOnContactLink();

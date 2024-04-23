@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+@Tag("@LoginTests")
 public class LoginTests extends BaseTest {
 
     @Test
-    @Tag("LoginTests")
+    @Tag("@Positive")
     @DisplayName("Проверка успешной авторизации")
     void test1() {
 //        нажимаем кнопку логин
@@ -23,7 +24,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Tag("LoginTests")
+    @Tag("@Negative")
     @DisplayName("Проверка ввода неверного пароля")
     void test2() {
         clickOnLoginLink();
@@ -34,14 +35,12 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Tag("LoginTests")
+    @Tag("@Negative")
     @DisplayName("Проверка не успешной регистрации")
     void test3() {
         clickOnLoginLink();
         fillLoginForm(new User("manuel@gmll.com", "Man"));
         clickOnRegistrationButton();
-        //Проверяем текст Алерта(Уведомления)
-        Assertions.assertTrue(getAlert().getText().contains("Password must contain"),"Сообщение об ошибке не соответствует ожидаемому");
+        Assertions.assertTrue(getAlert().getText().contains("Password must contain"), "Сообщение об ошибке не соответствует ожидаемому");
     }
-
 }
