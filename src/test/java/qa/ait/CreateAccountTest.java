@@ -29,6 +29,7 @@ public class CreateAccountTest {
         password.sendKeys("Admin_0987!.");
         WebElement registration = driver.findElement(By.name("registration"));
         registration.click();
+        WebElement signOut = driver.findElement(By.xpath("//button[contains(text(),'Sign Out')]"));
+        signOut.click();
     }
-
 }
