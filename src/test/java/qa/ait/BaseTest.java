@@ -13,11 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BaseTest {
-    public static final String URL_LITECART = "http://95.140.153.145/litecart";
-    public static final String URL_LITECART_ADMIN = "http://95.140.153.145/litecart/admin";
-    public static final String URL_PHONEBOOK = "https://telranedu.web.app/";
-    public static final String URL_ILCARRO = "https://ilcarro.web.app/search";
-    protected static final String URL_WEB_SHOP = "https://demowebshop.tricentis.com/";
 
     public WebDriver driver;
     public WebDriverWait wait;
@@ -39,24 +34,30 @@ public class BaseTest {
         driver.quit();
     }
 
-    //    Метод ожидант что элемент станет видимым пользователю
-    protected WebElement waitForVisibilityElement(WebElement element) {
-        return wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    //    Метод проверяет что элемент готов к клику.
-    protected WebElement waitForClickableElement(WebElement element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    //    Метод заполняет поля ввода по By.name значением value
-//    TODO сменить параметр на By locator
-    protected void fillInputFieldByName(String name, String value) {
-        WebElement element = waitForVisibilityElement(driver.findElement(By.name(name)));//Получаем элемент по By.name который будем заполнять
+    //    Метод заполняет поля ввода по locator значением value
+    protected void fillInputField(By locator, String value) {
+        WebElement element = waitForVisibilityElement(driver.findElement(locator));//Получаем элемент по By.name который будем заполнять
         element.clear();// очищаем поле ввода, от возможных предустановленных значений
         element.sendKeys(value);//заполняем поле ввода переданным значением в параметрах
         Assertions.assertEquals(value, element.getAttribute("value"));// Проверяем что значение нашего поля ввода, точно заполнилось нашим значением
     }
 
-//    TODO click и getElement
+// метод возвращает Веб Элемент для работы с ним по локатору
+    protected WebElement getElement(By locator) {
+        return waitForVisibilityElement(driver.findElement(locator));
+    }
+    // метод делает клик по Веб Элемент с указанным локатором
+    protected void clickOnElement(By locator) {
+        waitForClickableElement(driver.findElement(locator)).click();
+    }
+
+    //    Метод ожидант что элемент станет видимым пользователю
+    private WebElement waitForVisibilityElement(WebElement element) {
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    //    Метод проверяет что элемент готов к клику.
+    private WebElement waitForClickableElement(WebElement element) {
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
 }

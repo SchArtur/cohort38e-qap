@@ -6,14 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import qa.ait.BaseTest;
+import qa.ait.utill.Constants;
 
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 public class FindElementByTests extends BaseTest {
 
     @BeforeEach
     void start() {
-        driver.get(BaseTest.URL_ILCARRO);
+        driver.get(Constants.URL_ILCARRO);
     }
 
     @Test
@@ -64,7 +66,9 @@ public class FindElementByTests extends BaseTest {
         Assertions.assertTrue(element2.isDisplayed(), "Элемент по css классу не отображается на странице");
 
         //name -> [name='name']
-        WebElement element3 = driver.findElement(By.cssSelector("[for='city']"));
+//        driver.findElement(By.id("city"));
+//        driver.findElement(By.cssSelector("#city"));
+        WebElement element3 = driver.findElement(By.cssSelector("[id='city']"));
         Assertions.assertTrue(element3.isDisplayed(), "Элемент по css атрибуту не отображается на странице");
 
         //contains -> * [class='ng-untouched ng-pristine ng-invalid']

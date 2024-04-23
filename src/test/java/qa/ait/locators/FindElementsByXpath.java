@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import qa.ait.BaseTest;
 
+import static qa.ait.utill.Constants.URL_WEB_SHOP;
+
 public class FindElementsByXpath extends BaseTest {
 
     /*
@@ -29,6 +31,23 @@ public class FindElementsByXpath extends BaseTest {
      *  count() - возвращает количество элементов   - ---
      *  contains() - проверяет содержит ли строка подстроку //span[contains(text(),'Shoppin')]
      * */
+
+    /*
+    * //ul[@class='top-menu']/descendant::a[contains(text(),'Notebooks')] https://demowebshop.tricentis.com/
+    *
+    * В XPath есть несколько осей, которые можно использовать при создании выражений:
+        1) child::note — Выбирает все узлы note, которые являются прямыми потомками текущего узла
+        2) attribute::date — Выбирает атрибут date текущего узла
+        3) child::* — Выбирает всех прямых потомков текущего узла
+        4) attribute::* — Выбирает все атрибуты текущего узла
+        5) child::text() — Выбирает все текстовые узлы текущего узла
+        6) child::node() — Выбирает всех прямых потомков текущего узла
+        7) descendant::div — Выбирает всех потомков div текущего узла
+        8) ancestor::div — Выбирает всех предков div текущего узла
+        9) ancestor-or-self::div — Выбирает всех предков div текущего узла, а также сам текущий узел, если это узел div
+        10) child::* /child::div — Выбирает всех прямых потомков прямых потомков (“внуков") div текущего узла
+        11) last() — Выделяет последний элемент в дереве.
+    * */
 
     @Test
     void findElementByXpath() {
