@@ -1,20 +1,11 @@
-package qa.ait;
+package myWorksQA;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CreateAccountTest {
-    WebDriver driver;
+public class CreateAccountTest extends BaseTest {
 
-    @BeforeEach
-    public void startDriver() {
-        driver = new ChromeDriver();
-
-    }
 
     @Test
     public void findElementsForRegistrationTest() {
@@ -23,10 +14,10 @@ public class CreateAccountTest {
         login.click();
         WebElement email = driver.findElement(By.name("email"));
         email.clear();
-        email.sendKeys("Admin_123@rara.du");
+        email.sendKeys("user3656@example.com");
         WebElement password = driver.findElement(By.name("password"));
         password.clear();
-        password.sendKeys("Admin_0987!.");
+        password.sendKeys("FDApR9@vY3x!.");
         WebElement registration = driver.findElement(By.name("registration"));
         registration.click();
         WebElement signOut = driver.findElement(By.xpath("//button[contains(text(),'Sign Out')]"));
