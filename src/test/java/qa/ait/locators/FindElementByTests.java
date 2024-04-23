@@ -5,15 +5,15 @@
 //import org.junit.jupiter.api.Test;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebElement;
-//import qa.ait.BaseTest;
+//import qa.ait.qa.ait.BaseTest;
 //
 //import java.util.List;
 //
-//public class FindElementByTests extends BaseTest {
+//public class FindElementByTests extends qa.ait.BaseTest {
 //
 //    @BeforeEach
 //    void start() {
-//        driver.get(BaseTest.URL_ILCARRO);
+//        driver.get(qa.ait.BaseTest.URL_ILCARRO);
 //    }
 //
 //    @Test

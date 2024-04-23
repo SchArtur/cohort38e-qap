@@ -1,12 +1,15 @@
+package qa.ait.fifthHomework;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import qa.ait.BaseTest;
 
 public class CreateAccountTest extends BaseTest {
     @Test
     void verifyRegistrationForm() {
-        driver.navigate().to(LOGIN);
+        driver.navigate().to(BaseTest.LOGIN);
         fillInputFields("email", "Mickey5555@gmail.com");
         fillInputFields("password", "Mause555#");
         waitForClickableElement(driver.findElement(By.name("registration"))).click();

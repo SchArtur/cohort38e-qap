@@ -2,9 +2,9 @@
 //
 //import org.junit.jupiter.api.Assertions;
 //import org.junit.jupiter.api.Test;
-//import qa.ait.BaseTest;
+//import qa.ait.qa.ait.BaseTest;
 //
-//public class SecondSeleniumTest extends BaseTest {
+//public class SecondSeleniumTest extends qa.ait.BaseTest {
 //
 //    @Test
 //    void test1() {

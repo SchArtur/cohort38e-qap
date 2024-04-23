@@ -1,8 +1,11 @@
+package qa.ait.fourthHomework;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import qa.ait.BaseTest;
 
 public class FindElementsByXpathTest extends BaseTest {
     @BeforeEach

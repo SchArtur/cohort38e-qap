@@ -1,13 +1,15 @@
+package qa.ait.fifthHomework;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import qa.ait.BaseTest;
 
 public class AddContactTest extends BaseTest {
     @Test
     void addContacts() {
         login();
-        driver.navigate().to(ADD);
+        driver.navigate().to(BaseTest.ADD);
         fillInputs("name", "Mickey");
         fillInputs("lastName", "Mouse");
         fillInputs("phone", "+79986667688");
@@ -20,10 +22,10 @@ public class AddContactTest extends BaseTest {
     }
 
     void login() {
-        driver.navigate().to(LOGIN);
+        driver.navigate().to(BaseTest.LOGIN);
         fillInputs("email", "manuel@gm.com");
         fillInputs("password", "Manuel1234$");
-        waitForClickableElement(driver.findElement(By.name("login"))).click();
+        driver.findElement(By.name("login")).click();
     }
 
     void fillInputs(String name, String value) {
