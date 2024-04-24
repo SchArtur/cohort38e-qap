@@ -1,4 +1,4 @@
-package qa.demowebshop;
+package demowebshop;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -12,8 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static qa.demowebshop.utill.Constants.CART_QUANTITY;
-import static qa.demowebshop.utill.Constants.DEMO_WEB_SHOP;
+import static demowebshop.utill.Constants.CART_QUANTITY;
+import static demowebshop.utill.Constants.DEMO_WEB_SHOP;
+
 
 public class BaseTest {
 
