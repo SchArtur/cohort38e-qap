@@ -1,7 +1,6 @@
-package qa.demowebshop.addToCart;
+package qa.demowebshop;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,11 +8,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
+import static qa.demowebshop.utill.Constants.DEMO_WEB_SHOP;
+
 public class BaseTest {
-    public static final String DEMO_WEB_SHOP = "https://demowebshop.tricentis.com/";
-    public static final String ADD_TO_CART_BUTTON = "/html/body/div[4]/div[1]/div[4]/div[3]/div/div/div[3]/div[3]/div/div[2]/div[3]/div[2]/input";
+
     public WebDriver driver;
     public WebDriverWait wait;
 
@@ -26,13 +27,22 @@ public class BaseTest {
         driver.get(DEMO_WEB_SHOP);
     }
 
-    protected WebElement getElement(By locator) {
-        return waitForVisibilityElement(driver.findElement(locator));
+    protected void getElement(By locator) {
+        waitForVisibilityElement(driver.findElement(locator));
     }
 
-    void clickOnElement(By locator) {
+    protected void clickOnElement(By locator) {
         waitForClickableElement(driver.findElement(locator)).click();
     }
+
+//    protected void parseInt() {
+//        int number = Integer.parseInt(CART_QUANTITY.replace("(", "").replace(")", ""));
+//        if(number >= 1) {
+//            Assertions.assertTrue(true, "В корзину добавлен товар");
+//        } else {
+//            Assertions.fail("Товар не был добавлен в корзину");
+//        }
+//    }
 
     @AfterEach
         // эта аннатация - указание, что метод выполниться после каждого теста
@@ -40,8 +50,8 @@ public class BaseTest {
         driver.quit();
     }
 
-    private WebElement waitForVisibilityElement(WebElement element) {
-        return wait.until(ExpectedConditions.visibilityOf(element));
+    private void waitForVisibilityElement(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     private WebElement waitForClickableElement(WebElement element) {
