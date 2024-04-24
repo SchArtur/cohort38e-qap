@@ -29,8 +29,8 @@ public class BaseTest {
         driver.get(DEMO_WEB_SHOP);
     }
 
-    protected void getElement(By locator) {
-        waitForVisibilityElement(driver.findElement(locator));
+    protected WebElement getElement(By locator) {
+        return waitForVisibilityElement(driver.findElement(locator));
     }
 
     protected void clickOnElement(By locator) {
@@ -38,14 +38,14 @@ public class BaseTest {
     }
 
     protected int getCartQuantity() {
-        WebElement cartQtyElement = driver.findElement(By.xpath(CART_QUANTITY));
+        WebElement cartQtyElement = getElement(By.xpath(CART_QUANTITY));
         String cartQtyText = cartQtyElement.getText().replaceAll("\\D", "");;
         return Integer.parseInt(cartQtyText);
     }
 
     protected void verifyCartQuantityIncreased(int initialQuantity) {
         int currentQuantity = getCartQuantity();
-        Assertions.assertEquals(initialQuantity, currentQuantity,
+        Assertions.assertEquals(initialQuantity + 1, currentQuantity,
                 "Expected cart quantity to increase by 1, but actual quantity is: " + currentQuantity);
     }
 
@@ -55,8 +55,8 @@ public class BaseTest {
         driver.quit();
     }
 
-    private void waitForVisibilityElement(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+    private WebElement waitForVisibilityElement(WebElement element) {
+       return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     private WebElement waitForClickableElement(WebElement element) {
