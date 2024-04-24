@@ -7,8 +7,6 @@ import org.openqa.selenium.By;
 @Tag("@ContactTests")
 public class AddContactTests extends BaseTest {
 
-    private final Contact TEST_CONTACT = new Contact("Test", "Testoviy", "111111111111", "test@test.com", "Addresss", "Descr");
-
     @BeforeEach
     void precondition() {
         if (appManager.getUserHelper().isSignOutPresent()) {
@@ -21,17 +19,17 @@ public class AddContactTests extends BaseTest {
     @DisplayName("Успешное создание контакта")
     void test1() {
         appManager.getContactHelper().clickOnAddLink();
-        appManager.getContactHelper().fillAddContactForm(TEST_CONTACT);
+        appManager.getContactHelper().fillAddContactForm(appManager.getTestContact());
         appManager.getContactHelper().clickOnSaveButton();
-        appManager.getContactHelper().checkElementIsDisplayed(By.xpath(String.format("//h2[text()='%s']", TEST_CONTACT.getName())));
-        appManager.getContactHelper().removeContactByName(TEST_CONTACT.getName());
+        appManager.getContactHelper().contactIsPresent(appManager.getTestContact());
+        appManager.getContactHelper().removeContactByName(appManager.getTestContact().getName());
     }
 
     @Test
     @DisplayName("Создание контакта с некорректным номером телефона")
     void test2() {
         appManager.getContactHelper().clickOnAddLink();
-        appManager.getContactHelper().fillAddContactForm(TEST_CONTACT.setPhone("JJ"));
+        appManager.getContactHelper().fillAddContactForm(appManager.getTestContact().setPhone("JJ"));
         appManager.getContactHelper().clickOnSaveButton();
         Assertions.assertTrue(appManager.getContactHelper().getAlertText().contains("Phone not valid"), "Сообщение об ошибке не соответствует ожидаемому");
     }

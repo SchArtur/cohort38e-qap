@@ -69,4 +69,8 @@ public class ContactHelper extends BaseHelper {
             return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
         } else return 0;
     }
+
+    public void contactIsPresent(Contact contact) {
+        checkElementIsDisplayed(By.xpath(String.format("//h2[text()='%s']", contact.getName())));
+    }
 }
