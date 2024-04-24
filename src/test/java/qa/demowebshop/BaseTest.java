@@ -1,6 +1,7 @@
 package qa.demowebshop;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static qa.demowebshop.utill.Constants.CART_QUANTITY;
 import static qa.demowebshop.utill.Constants.DEMO_WEB_SHOP;
 
 public class BaseTest {
@@ -35,14 +37,17 @@ public class BaseTest {
         waitForClickableElement(driver.findElement(locator)).click();
     }
 
-//    protected void parseInt() {
-//        int number = Integer.parseInt(CART_QUANTITY.replace("(", "").replace(")", ""));
-//        if(number >= 1) {
-//            Assertions.assertTrue(true, "В корзину добавлен товар");
-//        } else {
-//            Assertions.fail("Товар не был добавлен в корзину");
-//        }
-//    }
+    protected int getCartQuantity() {
+        WebElement cartQtyElement = driver.findElement(By.xpath(CART_QUANTITY));
+        String cartQtyText = cartQtyElement.getText().replaceAll("\\D", "");;
+        return Integer.parseInt(cartQtyText);
+    }
+
+    protected void verifyCartQuantityIncreased(int initialQuantity) {
+        int currentQuantity = getCartQuantity();
+        Assertions.assertEquals(initialQuantity, currentQuantity,
+                "Expected cart quantity to increase by 1, but actual quantity is: " + currentQuantity);
+    }
 
     @AfterEach
         // эта аннатация - указание, что метод выполниться после каждого теста
@@ -56,5 +61,13 @@ public class BaseTest {
 
     private WebElement waitForClickableElement(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    protected void waitInSeconds(int seconds) {
+        try {
+            Thread.sleep(Duration.ofSeconds(seconds).toMillis());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
