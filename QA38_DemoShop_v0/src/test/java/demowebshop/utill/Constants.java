@@ -1,4 +1,4 @@
-package qa.demowebshop.utill;
+package demowebshop.utill;
 
 public class Constants {
     public static final String DEMO_WEB_SHOP = "https://demowebshop.tricentis.com/";

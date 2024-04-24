@@ -1,9 +1,10 @@
-package qa.ait.firstTest;
+package ait.firstTest;
 
+import ait.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SecondSeleniumTest extends qa.ait.BaseTest {
+public class SecondSeleniumTest extends BaseTest {
 
     @Test
     void test1() {

@@ -1,4 +1,4 @@
-package qa.ait;
+package ait;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;

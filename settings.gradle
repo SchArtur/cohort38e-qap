@@ -1,2 +1,5 @@
 rootProject.name = 'cohort38e-qap'
+include 'QA38_DemoShop_v1'
+include 'untitled'
+include 'QA38_DemoShop_v0'
 

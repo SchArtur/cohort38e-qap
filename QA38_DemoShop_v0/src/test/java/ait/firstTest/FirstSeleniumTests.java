@@ -1,4 +1,4 @@
-package qa.ait.firstTest;
+package ait.firstTest;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;

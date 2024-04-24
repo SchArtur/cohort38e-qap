@@ -1,10 +1,10 @@
-package qa.ait.fifthHomework;
+package ait.fifthHomework;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import qa.ait.BaseTest;
+import ait.BaseTest;
 
 public class CreateAccountTest extends BaseTest {
     @Test
