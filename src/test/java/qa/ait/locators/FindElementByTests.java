@@ -5,7 +5,6 @@
 //import org.junit.jupiter.api.Test;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebElement;
-//import qa.ait.qa.ait.BaseTest;
 //
 //import java.util.List;
 //
@@ -93,5 +92,4 @@
 //        WebElement element1 = driver.findElement(By.xpath("//*[@id='city']"));
 //
 //    }
-//
 //}
