@@ -24,8 +24,8 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // неявное ожидание 10 секунд на загрузку элементов
     }
 
-    @AfterEach
-        // эта аннатация - указание, что метод выполниться после каждого теста
+    @AfterEach // эта аннатация - указание, что метод выполниться после каждого теста
+//    @AfterAll даже если ваш тест упал секция AFTER выполнится (кроме системных ошибок)
     void afterVoid() {
         driver.quit();
     }
