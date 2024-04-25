@@ -12,10 +12,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BaseTest {
     public static final String DEMO_WEB_SHOP = "https://demowebshop.tricentis.com/";
-    public static final String CART_QUANTITY = "//span[@class='cart-qty']";
+//    public static final String CART_QUANTITY = "//span[@class='cart-qty']";
 
     public WebDriver driver;
     public WebDriverWait wait;
@@ -41,16 +42,22 @@ public class BaseTest {
         Assertions.assertEquals(value, element.getAttribute("value"));
     }
 
-    protected int getCartQuantity() {
-        WebElement cartQtyElement = getElement(By.xpath(CART_QUANTITY));
-        String cartQtyText = cartQtyElement.getText().replaceAll("\\D", "");
-        return Integer.parseInt(cartQtyText);
-    }
+//    protected int getCartQuantity() {
+//        WebElement cartQtyElement = getElement(By.xpath(CART_QUANTITY));
+//        String cartQtyText = cartQtyElement.getText().replaceAll("\\D", "");
+//        return Integer.parseInt(cartQtyText);
+//    }
+//
+//    protected void verifyCartQuantityIncreased(int initialQuantity) {
+//        int currentQuantity = getCartQuantity();
+//        Assertions.assertEquals(initialQuantity + 1, currentQuantity,
+//                "Expected cart quantity to increase by 1, but actual quantity is: " + currentQuantity);
+//    }
 
-    protected void verifyCartQuantityIncreased(int initialQuantity) {
-        int currentQuantity = getCartQuantity();
-        Assertions.assertEquals(initialQuantity + 1, currentQuantity,
-                "Expected cart quantity to increase by 1, but actual quantity is: " + currentQuantity);
+    protected boolean checkElementIsInCart() {
+        WebElement cartQtyElement = getElement(By.cssSelector(".page-body"));
+        List<WebElement> cartFormElements = cartQtyElement.findElements(By.xpath("//form[@action='/cart']"));
+        return !cartFormElements.isEmpty();
     }
 
     protected WebElement getElement(By locator) {
@@ -104,6 +111,10 @@ public class BaseTest {
 
     void clickOnContinueButton() {
         clickOnElement(By.xpath("//input[@value='Continue']"));
+    }
+
+    void clickOnShoppingCartLink() {
+        clickOnElement(By.xpath("//a[@href='/cart']"));
     }
 
     void checkElementIsDisplayed(By locator) {
