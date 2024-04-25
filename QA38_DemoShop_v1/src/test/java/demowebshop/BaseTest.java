@@ -15,7 +15,6 @@ import java.time.Duration;
 
 public class BaseTest {
     public static final String DEMO_WEB_SHOP = "https://demowebshop.tricentis.com/";
-//    public static final String ADD_TO_CART_BUTTON = "//div[@class='product-item' and @data-productid='31']//input[@type='button']";
     public static final String CART_QUANTITY = "//span[@class='cart-qty']";
 
     public WebDriver driver;
@@ -74,10 +73,6 @@ public class BaseTest {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void login(User user) {
-        login(new User("Sena555@google.com", "eDjzm4zRMs*a!x"));
-    }
-
     void clickOnLoginButton() {
         clickOnElement(By.xpath("//input[@value='Log in']"));
     }
@@ -86,9 +81,29 @@ public class BaseTest {
         clickOnElement(By.cssSelector("[href='/login']"));
     }
 
+    void clickOnRegisterButton() {
+        clickOnElement(By.xpath("//input[@value='Register']"));
+    }
+
     void fillLoginForm(User user) {
         fillInputField(By.name("Email"), user.getEmail());
         fillInputField(By.name("Password"), user.getPassword());
+    }
+
+    void fillRegisterForm(UserRegister userRegister) {
+        fillInputField(By.name("FirstName"), userRegister.getFirstName());
+        fillInputField(By.name("LastName"),userRegister.getLastName());
+        fillInputField(By.name("Email"),userRegister.getEmail());
+        fillInputField(By.name("Password"),userRegister.getPassword());
+        fillInputField(By.name("ConfirmPassword"),userRegister.getConfirmPassword());
+    }
+
+    void clickOnCheckBox() {
+        clickOnElement(By.xpath("//input[@value='F']"));
+    }
+
+    void clickOnContinueButton() {
+        clickOnElement(By.xpath("//input[@value='Continue']"));
     }
 
     void checkElementIsDisplayed(By locator) {
