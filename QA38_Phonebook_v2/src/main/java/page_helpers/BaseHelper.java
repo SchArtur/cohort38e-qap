@@ -1,19 +1,24 @@
 package page_helpers;
 
+import core.AppManager;
+import core.TestProperties;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.Duration;
 
 public class BaseHelper {
 
-    WebDriver driver;
-    WebDriverWait wait;
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+    private final Logger LOGGER = LoggerFactory.getLogger(BaseHelper.class);
 
     public BaseHelper(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -22,6 +27,7 @@ public class BaseHelper {
 
     //Метод заполняет поля ввода по locator значением value
     public void fillInputField(By locator, String value) {
+        LOGGER.info(String.format("Заполняем поле ввода с локатором %s значением %s", locator, value));
         WebElement element = waitForClickableElement(driver.findElement(locator));
         element.click();
         element.clear();
@@ -36,6 +42,7 @@ public class BaseHelper {
 
     //Метод делает клик по Веб Элемент с указанным локатором
     public void clickOnElement(By locator) {
+        LOGGER.info(String.format("Делаем click по элементу с локатором %s", locator));
         waitForClickableElement(driver.findElement(locator)).click();
     }
 
@@ -77,5 +84,16 @@ public class BaseHelper {
         String alertText = getAlert().getText();
         getAlert().accept();
         return alertText;
+    }
+
+    public static String takeScreenshot() {
+        File tmp = ((TakesScreenshot) AppManager.driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File(String.format("screenshots/screen%s.png", System.currentTimeMillis()));
+        try {
+            Files.copy(tmp.toPath(), screenshot.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return screenshot.getAbsolutePath();
     }
 }

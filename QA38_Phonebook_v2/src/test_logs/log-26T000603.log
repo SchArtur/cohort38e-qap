@@ -1,0 +1,24 @@
+98   [Test worker] INFO  core.TestProperties -- Загружаем application.properties
+100  [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+8935 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Проверка ввода неверного пароля в class phonebook.LoginTests
+8937 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+9026 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+9230 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением 234t234
+9286 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+10358 [Test worker] INFO  extension.RunnerExtension -- Тест Проверка ввода неверного пароля в class phonebook.LoginTests успешно завершен
+10359 [Test worker] INFO  extension.RunnerExtension -- ======================================================================
+15382 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Проверка успешной авторизации в class phonebook.LoginTests
+15383 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+15434 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+15566 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением Manuel1234$
+15642 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+15958 [Test worker] INFO  extension.RunnerExtension -- Тест Проверка успешной авторизации в class phonebook.LoginTests успешно завершен
+15958 [Test worker] INFO  extension.RunnerExtension -- ======================================================================
+15966 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //button[text()='Sign Out']
+15999 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Проверка не успешной регистрации в class phonebook.LoginTests
+16000 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+16030 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+16130 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением 123
+16194 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: registration
+16749 [Test worker] INFO  extension.RunnerExtension -- Тест Проверка не успешной регистрации в class phonebook.LoginTests успешно завершен
+16749 [Test worker] INFO  extension.RunnerExtension -- ======================================================================

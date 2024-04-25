@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 @Tag("@HomeTests")
+@Tag("@ALL")
 public class HomePageTests extends BaseTest {
 
     @BeforeEach
@@ -16,6 +17,7 @@ public class HomePageTests extends BaseTest {
     }
 
     @Test
+    @Tag("@Positive")
     @DisplayName("Переход в Home")
     void test1() {
         appManager.getHomePageHelper().clickOnHomeLink();

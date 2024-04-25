@@ -19,7 +19,7 @@ public class LoginTests extends BaseTest {
         fillLoginForm(new User("manuel@gm.com", "Manuel1234$"));
 //        нажимаем кнопку логин
         clickOnLoginButton();
-//        проверяем что есть  кнопка выход
+//        проверяем что есть кнопка выход
         checkElementIsDisplayed(By.xpath("//button[text()='Sign Out']"));
     }
 

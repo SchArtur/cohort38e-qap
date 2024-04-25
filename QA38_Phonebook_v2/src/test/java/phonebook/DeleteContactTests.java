@@ -3,6 +3,7 @@ package phonebook;
 import org.junit.jupiter.api.*;
 
 @Tag("@ContactTests")
+@Tag("@ALL")
 public class DeleteContactTests extends BaseTest {
 
     @BeforeEach
@@ -15,6 +16,7 @@ public class DeleteContactTests extends BaseTest {
     }
 
     @Test
+    @Tag("@Positive")
     @DisplayName("Успешное удаление контакта")
     void test1() {
         appManager.getContactHelper().clickOnContactLink();
@@ -23,6 +25,6 @@ public class DeleteContactTests extends BaseTest {
         appManager.getContactHelper().clickOnRemoveButton();
         appManager.getContactHelper().waitInSeconds(3);
         int afterRemove = appManager.getContactHelper().sizeOfContacts();
-        Assertions.assertEquals(beforeRemove - 1, afterRemove, "Количество контактов не изменилось");
+        Assertions.assertEquals(beforeRemove - 2, afterRemove, "Количество контактов не изменилось");
     }
 }

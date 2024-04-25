@@ -2,11 +2,12 @@ package phonebook;
 
 import org.junit.jupiter.api.*;
 
+import static core.AppManager.URL_PHONEBOOK;
 import static core.AppManager.properties;
 
 @Tag("@LoginTests")
+@Tag("@ALL")
 public class LoginTests extends BaseTest {
-
     @BeforeEach
     void precondition() {
         if (appManager.getUserHelper().isSignOutPresent()) {
@@ -16,6 +17,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
+    @Tag("@1213")
     @Tag("@Negative")
     @DisplayName("Проверка ввода неверного пароля")
     void test1() {

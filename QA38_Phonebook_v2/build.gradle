@@ -12,12 +12,19 @@ repositories {
 dependencies {
     implementation platform('org.junit:junit-bom:5.9.1')
     implementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.platform:junit-platform-engine:1.11.0-M1'
     implementation 'org.seleniumhq.selenium:selenium-java:4.19.0'
+    implementation 'ch.qos.logback:logback-classic:1.5.5'
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform() {
+        if (project.hasProperty('tags')) {
+            includeTags("${tags}")
+        }
+    }
     testLogging {
         events "passed", "skipped", "failed"
     }
 }
+

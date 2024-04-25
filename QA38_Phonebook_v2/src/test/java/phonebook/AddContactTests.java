@@ -1,10 +1,11 @@
 package phonebook;
 
-import model.Contact;
+import extension.RunnerExtension;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 @Tag("@ContactTests")
+@Tag("@ALL")
 public class AddContactTests extends BaseTest {
 
     @BeforeEach
@@ -16,6 +17,8 @@ public class AddContactTests extends BaseTest {
     }
 
     @Test
+    @Tag("@Positive")
+    @Tag("@1")
     @DisplayName("Успешное создание контакта")
     void test1() {
         appManager.getContactHelper().clickOnAddLink();
@@ -26,6 +29,7 @@ public class AddContactTests extends BaseTest {
     }
 
     @Test
+    @Tag("@Negative")
     @DisplayName("Создание контакта с некорректным номером телефона")
     void test2() {
         appManager.getContactHelper().clickOnAddLink();

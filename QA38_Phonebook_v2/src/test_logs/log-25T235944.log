@@ -1,0 +1,4 @@
+94   [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+10212 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Успешное удаление контакта в Optional[class phonebook.DeleteContactTests]
+13816 [Test worker] INFO  extension.RunnerExtension -- Тест Успешное удаление контакта в class phonebook.DeleteContactTests успешно завершен
+13817 [Test worker] INFO  extension.RunnerExtension -- ======================================================================

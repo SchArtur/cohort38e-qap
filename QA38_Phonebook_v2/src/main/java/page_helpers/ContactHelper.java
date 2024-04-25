@@ -22,12 +22,12 @@ public class ContactHelper extends BaseHelper {
     }
 
 
-    //Нажатие на кнопу Save
+    //Нажатие на кнопку Save
     public void clickOnSaveButton() {
         clickOnElement(By.xpath("//*[text()='Save']"));
     }
 
-    //Нажатие на кнопу Remove
+    //Нажатие на кнопку Remove
     public void clickOnRemoveButton() {
         clickOnElement(By.xpath("//button[text()='Remove']"));
     }

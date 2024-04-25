@@ -2,4 +2,5 @@ rootProject.name = 'cohort38e-qap'
 include 'QA38_Phonebook_v1'
 include 'QA38_Phonebook_v2'
 include 'QA38_Phonebook_v0'
+include 'QA38_Phonebook_v2_testNG'
 

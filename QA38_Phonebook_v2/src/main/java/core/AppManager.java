@@ -8,6 +8,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import page_helpers.ContactHelper;
 import page_helpers.HomePageHelper;
 import page_helpers.UserHelper;
@@ -49,8 +51,10 @@ public class AppManager {
     private HomePageHelper homePageHelper;
     private User testUser;
     private Contact testContact;
+    private final Logger LOG = LoggerFactory.getLogger(AppManager.class);
 
     public void init() {
+        LOG.info(String.format("Инициализируем драйвер %s браузера", browser));
         switch (browser) {
             case "chrome":
                 driver = new ChromeDriver();
@@ -80,7 +84,7 @@ public class AppManager {
     }
 
     public void stop() {
-//        driver.close();
+        driver.close();
         driver.quit();
     }
 }

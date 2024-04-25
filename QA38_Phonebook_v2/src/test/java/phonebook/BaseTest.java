@@ -1,9 +1,14 @@
 package phonebook;
 
 import core.AppManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import extension.RunnerExtension;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+@ExtendWith(RunnerExtension.class)
 public class BaseTest {
 
     protected static AppManager appManager = new AppManager();
