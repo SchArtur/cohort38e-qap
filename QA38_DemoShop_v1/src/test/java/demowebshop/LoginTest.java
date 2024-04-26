@@ -24,7 +24,6 @@ public class LoginTest extends BaseTest{
         clickOnLoginLink();
         fillLoginForm(new User("Sena555@google.com", "eDjzm4zRs*a!x"));
         clickOnLoginButton();
-        Assertions.assertEquals("Login was unsuccessful. Please correct the errors and try again. No customer account found", getAlert().getText(), "Текст ошибки не соответствует ожидаемому");
+        Assertions.assertEquals("Login was unsuccessful. Please correct the errors and try again.", getElement(By.xpath("//*[@class='validation-summary-errors']/span")).getText(), "Текст ошибки не соответствует ожидаемому");
     }
-
 }

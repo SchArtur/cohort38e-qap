@@ -18,8 +18,8 @@ public class BaseTest {
     public static final String DEMO_WEB_SHOP = "https://demowebshop.tricentis.com/";
 //    public static final String CART_QUANTITY = "//span[@class='cart-qty']";
 
-    public WebDriver driver;
-    public WebDriverWait wait;
+    public static WebDriver driver;
+    public static WebDriverWait wait;
 
     @BeforeEach
     public void startDriver() {
@@ -60,7 +60,7 @@ public class BaseTest {
         return !cartFormElements.isEmpty();
     }
 
-    protected WebElement getElement(By locator) {
+    protected static WebElement getElement(By locator) {
         return waitForVisibilityElement(driver.findElement(locator));
     }
     protected void clickOnElement(By locator) {
@@ -72,7 +72,7 @@ public class BaseTest {
         return alert;
     }
 
-    private WebElement waitForVisibilityElement(WebElement element) {
+    private static WebElement waitForVisibilityElement(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
