@@ -1,0 +1,51 @@
+163  [Test worker] INFO  core.TestProperties -- Загружаем application.properties
+165  [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+8761 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+8852 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+9050 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением Manuel1234$
+9121 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+9163 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/add']
+10042 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Name'] значением Test
+10131 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Last Name' значением Testoviy
+10212 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Phone' значением 111111111111
+10280 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='email' значением test@test.com
+10347 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Address' значением Addresss
+10415 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='description' значением Descr
+10480 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //*[text()='Save']
+10512 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Успешное удаление контакта в class phonebook.DeleteContactTests
+10513 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/contacts']
+11012 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //h2[text()='Test']
+11052 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //button[text()='Remove']
+14123 [Test worker] INFO  extension.RunnerExtension -- Тест Успешное удаление контакта в class phonebook.DeleteContactTests успешно завершен
+14123 [Test worker] INFO  extension.RunnerExtension -- ======================================================================
+14306 [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+22177 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+22284 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+22463 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением Manuel1234$
+22538 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+22574 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Успешное создание контакта в class phonebook.AddContactTests
+22575 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/add']
+23438 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Name'] значением Test
+23530 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Last Name' значением Testoviy
+23599 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Phone' значением 111111111111
+23669 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='email' значением test@test.com
+23742 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Address' значением Addresss
+23804 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='description' значением Descr
+23873 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //*[text()='Save']
+24442 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //h2[text()='Test']
+24492 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //button[text()='Remove']
+26532 [Test worker] INFO  extension.RunnerExtension -- Тест Успешное создание контакта в class phonebook.AddContactTests успешно завершен
+26533 [Test worker] INFO  extension.RunnerExtension -- ======================================================================
+26704 [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+33821 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Переход в Home в class phonebook.HomePageTests
+33823 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/home']
+33937 [Test worker] INFO  extension.RunnerExtension -- Тест Переход в Home в class phonebook.HomePageTests успешно завершен
+33938 [Test worker] INFO  extension.RunnerExtension -- ======================================================================
+34105 [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+41119 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Проверка успешной авторизации в class phonebook.LoginTests
+41120 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+41204 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+41377 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением Manuel1234$
+41456 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+42381 [Test worker] INFO  extension.RunnerExtension -- Тест Проверка успешной авторизации в class phonebook.LoginTests успешно завершен
+42382 [Test worker] INFO  extension.RunnerExtension -- ======================================================================

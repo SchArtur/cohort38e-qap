@@ -3,4 +3,6 @@ include 'QA38_Phonebook_v1'
 include 'QA38_Phonebook_v2'
 include 'QA38_Phonebook_v0'
 include 'QA38_Phonebook_v2_testNG'
+include 'QA38_Phonebook_v3'
+include 'QA38_DemoQA_POM'
 

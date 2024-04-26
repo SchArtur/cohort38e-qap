@@ -20,8 +20,8 @@ public class DemoShop extends BaseTest {
         WebElement addToCard2 = getElement(By.cssSelector("[data-productid='31']")).findElement(By.cssSelector("[value='Add to cart']"));
         //3
         WebElement addToCard3 = getElement(By.cssSelector("//*[@data-productid='31']/descendant::input[@value='Add to cart']"));
-        
-        addToCard.click();
+
+        addToCard3.click();
         //4
         List<WebElement> listElement2 = driver.findElements(By.xpath("//*[@class='product-item']/descendant::input[@value='Add to cart']"));
         listElement2.get(1).click();

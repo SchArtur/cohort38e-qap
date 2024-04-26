@@ -1,25 +1,20 @@
-package phonebook;
+package com.ait.qa.phonebookTests;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import com.ait.qa.BaseTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-@Tag("@HomeTests")
-@Tag("@ALL")
-@Tag("@SMOKE")
+
 public class HomePageTests extends BaseTest {
 
-    @BeforeEach
+    @BeforeMethod
     void precondition() {
         if (appManager.getUserHelper().isSignOutPresent()) {
             appManager.getUserHelper().clickOnSignOutButton();
         }
     }
 
-    @Test
-    @Tag("@Positive")
-    @DisplayName("Переход в Home")
+    @Test(description = "Переход на Home", groups = {"Positive"})
     void test1() {
         appManager.getHomePageHelper().clickOnHomeLink();
         appManager.getHomePageHelper().checkHomeComponentIsPresent();

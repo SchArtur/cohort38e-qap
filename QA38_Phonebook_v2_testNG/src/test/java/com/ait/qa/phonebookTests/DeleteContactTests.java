@@ -1,13 +1,14 @@
-package phonebook;
+package com.ait.qa.phonebookTests;
 
-import org.junit.jupiter.api.*;
+import com.ait.qa.BaseTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-@Tag("@ContactTests")
-@Tag("@ALL")
-@Tag("@Regression")
+import static org.testng.Assert.assertEquals;
+
 public class DeleteContactTests extends BaseTest {
 
-    @BeforeEach
+    @BeforeMethod
     void precondition() {
         if (appManager.getUserHelper().isSignOutPresent()) {
             appManager.getUserHelper().clickOnSignOutButton();
@@ -16,10 +17,7 @@ public class DeleteContactTests extends BaseTest {
         appManager.getContactHelper().addContact(appManager.getTestContact());
     }
 
-    @Test
-    @Tag("@Positive")
-    @Disabled
-    @DisplayName("Успешное удаление контакта")
+    @Test(description = "Успешное удаление контакта", groups = {"Positive"})
     void test1() {
         appManager.getContactHelper().clickOnContactLink();
         int beforeRemove = appManager.getContactHelper().sizeOfContacts();
@@ -27,6 +25,6 @@ public class DeleteContactTests extends BaseTest {
         appManager.getContactHelper().clickOnRemoveButton();
         appManager.getContactHelper().waitInSeconds(3);
         int afterRemove = appManager.getContactHelper().sizeOfContacts();
-        Assertions.assertEquals(beforeRemove - 1, afterRemove, "Количество контактов не изменилось");
+        assertEquals(beforeRemove - 2, afterRemove, "Количество контактов не изменилось");
     }
 }
