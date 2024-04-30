@@ -64,10 +64,15 @@ public class BasePage {
     }
 
     //Проверяет наличие элемента по локатору
-    public void checkElementIsDisplayed(By locator) {
-        Assertions.assertTrue(getElement(locator).isDisplayed(), String.format("Ожидаемы елемент по %s локатору не найден", locator));
+    public void checkElementIsDisplayed(WebElement element) {
+        Assertions.assertTrue(element.isDisplayed(), String.format("Ожидаемы елемент по %s локатору не найден", element.getLocation()));
     }
 
+    public String getAlertText() {
+        String alertText = getAlert().getText();
+        getAlert().accept();
+        return alertText;
+    }
     public boolean isElementPresent(List<WebElement> elements) {
         return elements.size() > 0;
     }
@@ -80,6 +85,4 @@ public class BasePage {
             throw new RuntimeException(e);
         }
     }
-
-
 }

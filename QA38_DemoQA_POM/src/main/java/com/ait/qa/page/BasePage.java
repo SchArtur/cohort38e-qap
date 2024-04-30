@@ -1,7 +1,7 @@
 package com.ait.qa.page;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -12,17 +12,17 @@ public class BasePage {
     WebDriver driver;
     WebDriverWait wait;
 
-    public BasePage(WebDriver driver) {
+    public BasePage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
-        WebDriverWait wait;
+        this.wait = wait;
         PageFactory.initElements(driver, this);
     }
 
     protected void fillInputField(WebElement element, String value) {
-        WebElement elementType = waitForVisibilityElement(element);//Получаем элемент по By.name который будем заполнять
-        elementType.clear();// очищаем поле ввода, от возможных предустановленных значений
-        elementType.sendKeys(value);//заполняем поле ввода переданным значением в параметрах
-        Assertions.assertEquals(value, elementType.getAttribute("value"));// Проверяем что значение нашего поля ввода, точно заполнилось нашим значением
+        WebElement elementType = waitForVisibilityElement(element);
+        elementType.clear();
+        elementType.sendKeys(value);
+        Assertions.assertEquals(value, elementType.getAttribute("value"));
     }
 
     //Метод возвращает Веб Элемент для работы с ним по локатору
@@ -42,6 +42,12 @@ public class BasePage {
 
     //Метод проверяет что элемент готов к клику.
     private WebElement waitForClickableElement(WebElement element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));}
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public Alert getAlert() {
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        return alert;
+    }
 
 }
