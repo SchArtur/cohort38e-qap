@@ -49,8 +49,8 @@ public class BasePage {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    void checkElementIsDisplayed(By locator) {
-        Assertions.assertTrue(getElement(locator).isDisplayed(), String.format("Ожидаемы елемент по %s локатору не найден", locator));
+    void checkElementIsDisplayed(WebElement element) {
+        Assertions.assertTrue(element.isDisplayed(), String.format("Ожидаемы елемент по %s локатору не найден", element));
     }
 
     public boolean isElementPresent(List<WebElement> elements) {

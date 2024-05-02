@@ -4,4 +4,5 @@ include 'untitled'
 include 'QA38_DemoShop_v0'
 include 'QA38_DemoShop_v2'
 include 'QA38_DemoShop_v3'
+include 'QA38_Herokuapp_Page_Object_Model'
 

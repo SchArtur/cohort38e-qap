@@ -1,5 +1,6 @@
 package page;
 
+import model.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,15 +22,15 @@ public class LoginPage extends BasePage {
         super(driver, wait);
     }
 
-    public void login() {
+    public void login(User user) {
         clickOnLoginLink();
-        fillUserLoginForm();
+        fillUserLoginForm(user);
         clickOnLoginButton();
     }
 
-    public void fillUserLoginForm() {
-        fillInputField(emailForm, "Sena555@google.com");
-        fillInputField(passwordForm, "eDjzm4zRMs*a!x");
+    public void fillUserLoginForm(User user) {
+        fillInputField(emailForm, user.getEmail());
+        fillInputField(passwordForm, user.getPassword());
     }
 
     public void clickOnLoginLink() {

@@ -6,6 +6,6 @@ import page.LoginPage;
 public class LoginTest extends BaseTest {
     @Test
     void test1() {
-        new LoginPage(driver, wait).login();
+        new LoginPage(driver, wait).login(testUser);
     }
 }

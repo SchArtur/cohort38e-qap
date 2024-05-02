@@ -1,27 +1,31 @@
 package tests;
 
-import model.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 public class BaseTest {
 
-    public static final String DEMO_WEB_SHOP = "https://demowebshop.tricentis.com/";
-    public User testUser = new User("Sena555@google.com", "eDjzm4zRMs*a!x");
+    public static final String HEROKUAPP = "https://the-internet.herokuapp.com/";
+    private final Logger LOG = LoggerFactory.getLogger(BaseTest.class);
     public WebDriver driver;
     public WebDriverWait wait;
+
     @BeforeEach
     public void startDriver() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        driver.get(DEMO_WEB_SHOP);
+        driver.get(HEROKUAPP);
     }
+
     @AfterEach
     void afterVoid() {
         driver.quit();

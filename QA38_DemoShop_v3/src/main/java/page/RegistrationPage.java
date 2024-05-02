@@ -53,13 +53,13 @@ public class RegistrationPage extends BasePage {
         clickOnElement(buttonContinue);
     }
     void checkIsLogOutPresent() {
-        checkElementIsDisplayed((By) logOutLink);
+        checkElementIsDisplayed(logOutLink);
     }
     public void registration() {
         clickOnLoginLink();
         clickOnRegisterButton();
         clickOnCheckBox();
-        fillRegisterForm(new UserRegister("Bella", "Goltsman", "goltsman54578777@gamil.com", "nx5#w5pq5KgGGAABBB", "nx5#w5pq5KgGGAABBB"));
+        fillRegisterForm(new UserRegister("Bella", "Goltsman", "goltsman545787777@gamil.com", "nx5#w5pq5KgGGAABBBB", "nx5#w5pq5KgGGAABBBB"));
         clickOnRegisterButton();
         clickOnContinueButton();
         checkIsLogOutPresent();
