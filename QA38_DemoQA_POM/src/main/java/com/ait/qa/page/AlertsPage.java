@@ -17,9 +17,12 @@ public class AlertsPage extends BasePage {
     WebElement timerAlertButton;
     @FindBy(id = "confirmButton")
     WebElement confirmButton;
-
     @FindBy(id = "confirmResult")
     WebElement confirmResult;
+    @FindBy(id = "promtButton")
+    WebElement promtButton;
+    @FindBy(id = "promptResult")
+    WebElement promptResult;
 
     public AlertsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -46,6 +49,25 @@ public class AlertsPage extends BasePage {
         String actual = confirmResult.getText();
         LOG.info(String.format("Проверяем confirmResult, expected - %s, actual - %s", expectedResult, actual));
         Assertions.assertTrue(actual.contains(expectedResult));
+        return this;
+    }
+
+    public AlertsPage clickPromtAlert(String text) {
+        clickElement(promtButton);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        if (!text.isEmpty()) {
+            alert.sendKeys(text);
+            alert.accept();
+        } else {
+            alert.dismiss();
+        }
+        return this;
+    }
+
+    public AlertsPage checkPromtResult(String expectedText) {
+        String actual = promptResult.getText();
+        LOG.info(String.format("Проверяем promptResult, expected - %s, actual - %s", expectedText, actual));
+        Assertions.assertTrue(actual.contains(expectedText));
         return this;
     }
 }

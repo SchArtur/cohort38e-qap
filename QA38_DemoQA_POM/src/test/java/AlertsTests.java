@@ -10,26 +10,36 @@ public class AlertsTests extends BaseTest {
     @BeforeEach
     public void precondition() {
         new HomePage(driver, wait).getAlertFrameWindows();
-        new LeftPannel(driver,wait).clickAlertsButton();
+        new LeftPannel(driver, wait).clickAlertsButton();
     }
 
     @Test
     @DisplayName("Проверка Alert Timer")
-    void test1(){
+    void test1() {
         new AlertsPage(driver, wait).clickTimerAlertButton();
     }
 
     @Test
-    @DisplayName("Проверка Alert confirmButton")
-    void test2(){
+    @DisplayName("Проверка Alert confirmButton - ok")
+    void test2() {
         new AlertsPage(driver, wait)
                 .clickConfirmButton("ok")
                 .checkConfirmResult("Ok");
     }
 
     @Test
-    @DisplayName("Проверка Alert Timer")
-    void test3(){
-        new AlertsPage(driver, wait).clickTimerAlertButton();
+    @DisplayName("Проверка Alert confirmButton - cancel")
+    void test3() {
+        new AlertsPage(driver, wait)
+                .clickConfirmButton("cancel")
+                .checkConfirmResult("Cancel");
+    }
+
+    @Test
+    @DisplayName("Проверка Promt Alert text")
+    void test4() {
+        new AlertsPage(driver, wait)
+                .clickPromtAlert("Hello")
+                .checkPromtResult("Hello");
     }
 }

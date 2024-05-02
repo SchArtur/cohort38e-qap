@@ -9,13 +9,30 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//h5[.='Alerts, Frame & Windows']")
     WebElement alertFrameWindows;
+    @FindBy(xpath = "//h5[.='Widgets']")
+    WebElement widgets;
+    @FindBy(xpath = "//h5[.='Interactions']")
+    WebElement interactions;
 
     public HomePage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
     public LeftPannel getAlertFrameWindows() {
-        clickOnElement(alertFrameWindows);
+        scrollPage();
+        clickElement(alertFrameWindows);
+        return new LeftPannel(driver, wait);
+    }
+
+    public LeftPannel getWidgets() {
+        scrollPage();
+        clickElement(widgets);
+        return new LeftPannel(driver, wait);
+    }
+
+    public LeftPannel getInteractions() {
+        scrollPage();
+        clickElement(interactions);
         return new LeftPannel(driver, wait);
     }
 }
