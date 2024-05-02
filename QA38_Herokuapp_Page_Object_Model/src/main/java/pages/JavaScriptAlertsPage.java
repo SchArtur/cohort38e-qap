@@ -1,5 +1,7 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,44 +10,59 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class JavaScriptAlertsPage extends BasePage{
-    @FindBy(css = "[href='/javascript_alerts']")
-    WebElement javascriptLink;
     @FindBy(xpath = "//button[text()='Click for JS Alert']")
     WebElement clickForJsAlertLink;
-    @FindBy(xpath = "//button[text='Click for JS Confirm']")
+    @FindBy(xpath = "//button[text()='Click for JS Confirm']")
     WebElement clickForJsConfirmLink;
-    @FindBy(xpath = "//button[text='Click for JS Prompt']")
+    @FindBy(xpath = "//button[text()='Click for JS Prompt']")
     WebElement clickForJsPromptLink;
+    @FindBy(css = "[id = 'result']")
+    WebElement result;
+
     public JavaScriptAlertsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    public void clickOnJavascriptLink() {
-        clickOnElement(javascriptLink);
+    @BeforeEach
+    public void precondition(){
+        new HomePage(driver,wait).clickJsAlert();
     }
 
     public void clickOnJsAlert() {
+        precondition();
         clickOnElement(clickForJsAlertLink);
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.accept();
     }
-    public void clickOnJsConfirm() {
+
+    public JavaScriptAlertsPage clickOnJsConfirm() {
+        precondition();
         clickOnElement(clickForJsConfirmLink);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.accept();
+        Assertions.assertTrue(result.getText().contains("Ok"));
+        return this;
     }
-    public void clickOnJsPrompt() {
+
+    public JavaScriptAlertsPage clickOnJsPrompt() {
+        precondition();
         clickOnElement(clickForJsPromptLink);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.sendKeys("Hello");
+        alert.accept();
+        Assertions.assertTrue(result.getText().contains("Hello"), "Mistake with entering");
+        return this;
     }
 
     public void handleJsAlert() {
-        clickOnJavascriptLink();
         clickOnJsAlert();
     }
+
     public void handleJsConfirm() {
-        clickOnJavascriptLink();
         clickOnJsConfirm();
     }
+
     public void handleJsPrompt() {
-        clickOnJavascriptLink();
         clickOnJsPrompt();
     }
 }
