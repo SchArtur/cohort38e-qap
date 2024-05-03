@@ -13,6 +13,11 @@ public class HomePage extends BasePage {
     WebElement widgets;
     @FindBy(xpath = "//h5[.='Interactions']")
     WebElement interactions;
+    @FindBy(xpath = "//h5[.='Forms']")
+    WebElement forms;
+
+    @FindBy(xpath = "//h5[.='Elements']")
+    WebElement elements;
 
     public HomePage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -21,6 +26,12 @@ public class HomePage extends BasePage {
     public LeftPannel getAlertFrameWindows() {
         scrollPage();
         clickElement(alertFrameWindows);
+        return new LeftPannel(driver, wait);
+    }
+
+    public LeftPannel getElements() {
+        scrollPage();
+        clickElement(elements);
         return new LeftPannel(driver, wait);
     }
 
@@ -33,6 +44,12 @@ public class HomePage extends BasePage {
     public LeftPannel getInteractions() {
         scrollPage();
         clickElement(interactions);
+        return new LeftPannel(driver, wait);
+    }
+
+    public LeftPannel getForms() {
+        scrollPage();
+        clickElement(forms);
         return new LeftPannel(driver, wait);
     }
 }

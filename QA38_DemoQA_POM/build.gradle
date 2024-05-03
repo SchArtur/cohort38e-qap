@@ -27,3 +27,12 @@ test {
         events "passed", "skipped", "failed"
     }
 }
+
+task smoke(type:Test) {
+    useJUnitPlatform() {
+        includeTags("@SMOKE")
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

@@ -16,6 +16,14 @@ public class LeftPannel extends BasePage {
     WebElement selectMenu;
     @FindBy(xpath = "//span[.='Droppable']")
     WebElement droppable;
+    @FindBy(xpath = "//span[.='Practice Form']")
+    WebElement practiceForm;
+
+    @FindBy(xpath = "//span[.='Upload and Download']")
+    WebElement uploadAndDownload;
+
+    @FindBy(xpath = "//span[.='Broken Links - Images']")
+    WebElement brokenLinksImages;
 
 
     public LeftPannel(WebDriver driver, WebDriverWait wait) {
@@ -25,6 +33,16 @@ public class LeftPannel extends BasePage {
     public AlertsPage clickAlertsButton() {
         clickOnElement(alerts);
         return new AlertsPage(driver, wait);
+    }
+
+    public BrokenLinksImagesPage clickBrokenLinksImages() {
+        clickOnElement(brokenLinksImages);
+        return new BrokenLinksImagesPage(driver, wait);
+    }
+
+    public UploadAndDownloadPage clickUploadAndDownload() {
+        clickOnElement(uploadAndDownload);
+        return new UploadAndDownloadPage(driver, wait);
     }
 
     public BrowserWindowsPage clickBrowserWindows() {
@@ -40,6 +58,12 @@ public class LeftPannel extends BasePage {
     public DroppablePage clickDroppable() {
         scrollPage();
         clickElement(droppable);
+        return new DroppablePage(driver, wait);
+    }
+
+    public DroppablePage clickPracticeForm() {
+        scrollPage();
+        clickElement(practiceForm);
         return new DroppablePage(driver, wait);
     }
 }
