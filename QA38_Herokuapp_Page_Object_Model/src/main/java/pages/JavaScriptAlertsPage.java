@@ -34,7 +34,6 @@ public class JavaScriptAlertsPage extends BasePage{
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.accept();
     }
-
     public JavaScriptAlertsPage clickOnJsConfirm() {
         precondition();
         clickOnElement(clickForJsConfirmLink);
@@ -43,7 +42,6 @@ public class JavaScriptAlertsPage extends BasePage{
         Assertions.assertTrue(result.getText().contains("Ok"));
         return this;
     }
-
     public JavaScriptAlertsPage clickOnJsPrompt() {
         precondition();
         clickOnElement(clickForJsPromptLink);
@@ -57,11 +55,9 @@ public class JavaScriptAlertsPage extends BasePage{
     public void handleJsAlert() {
         clickOnJsAlert();
     }
-
     public void handleJsConfirm() {
         clickOnJsConfirm();
     }
-
     public void handleJsPrompt() {
         clickOnJsPrompt();
     }

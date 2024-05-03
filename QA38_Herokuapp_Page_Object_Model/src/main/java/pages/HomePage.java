@@ -11,9 +11,23 @@ public class HomePage extends BasePage {
     }
     @FindBy(css = "[href = '/javascript_alerts']")
     WebElement javaScriptAlerts;
+    @FindBy(css = "[href = '/checkboxes']")
+    WebElement checkboxesPageLink;
+    @FindBy(css = "[href = '/dropdown']")
+    WebElement dropdownListPageLink;
 
     public JavaScriptAlertsPage clickJsAlert(){
         clickOnElement(javaScriptAlerts);
         return new JavaScriptAlertsPage(driver,wait);
+    }
+
+    public CheckboxesPage clickCheckboxesLink(){
+        clickOnElement(checkboxesPageLink);
+        return new CheckboxesPage(driver,wait);
+    }
+
+    public DropdownListPage clickDropdownListLink(){
+        clickOnElement(dropdownListPageLink);
+        return new DropdownListPage(driver,wait);
     }
 }
