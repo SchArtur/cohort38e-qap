@@ -3,8 +3,11 @@ import com.ait.qa.page.HomePage;
 import com.ait.qa.page.LeftPannel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("@AlertsTests")
+@Tag("@ALL")
 public class AlertsTests extends BaseTest {
 
     @BeforeEach
@@ -14,6 +17,7 @@ public class AlertsTests extends BaseTest {
     }
 
     @Test
+    @Tag("@SMOKE")
     @DisplayName("Проверка Alert Timer")
     void test1() {
         new AlertsPage(driver, wait).clickTimerAlertButton();

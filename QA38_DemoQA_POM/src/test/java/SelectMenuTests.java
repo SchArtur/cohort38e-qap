@@ -3,8 +3,11 @@ import com.ait.qa.page.LeftPannel;
 import com.ait.qa.page.SelectMenuPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("@SelectMenuTests")
+@Tag("@ALL")
 public class SelectMenuTests extends BaseTest {
 
     @BeforeEach
@@ -15,6 +18,7 @@ public class SelectMenuTests extends BaseTest {
 
 
     @Test
+    @Tag("@SMOKE")
     @DisplayName("Проверка работы выпадающего списка")
     void test1() {
         new SelectMenuPage(driver, wait)
