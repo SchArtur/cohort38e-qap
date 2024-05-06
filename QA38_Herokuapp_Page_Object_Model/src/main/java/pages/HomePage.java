@@ -15,6 +15,10 @@ public class HomePage extends BasePage {
     WebElement checkboxesPageLink;
     @FindBy(css = "[href = '/dropdown']")
     WebElement dropdownListPageLink;
+    @FindBy(css="[href = '/broken_images']")
+    WebElement brokenImagesLink;
+    @FindBy(css="[href = '/drag_and_drop']")
+    WebElement dragAndDropLink;
 
     public JavaScriptAlertsPage clickJsAlert(){
         clickOnElement(javaScriptAlerts);
@@ -29,5 +33,15 @@ public class HomePage extends BasePage {
     public DropdownListPage clickDropdownListLink(){
         clickOnElement(dropdownListPageLink);
         return new DropdownListPage(driver,wait);
+    }
+
+    public BrokenImagesPage brokenImagesLink(){
+        clickOnElement(brokenImagesLink);
+        return new BrokenImagesPage(driver,wait);
+    }
+
+    public DragAndDropPage dragAndDropLink(){
+        clickOnElement(dragAndDropLink);
+        return new DragAndDropPage(driver,wait);
     }
 }
