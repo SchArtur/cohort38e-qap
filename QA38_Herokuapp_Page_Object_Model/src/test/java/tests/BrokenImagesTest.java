@@ -7,21 +7,23 @@ import pages.BrokenImagesPage;
 
 public class BrokenImagesTest extends BaseTest {
     @Test
-    @Tag("smoke")
+    @Tag("@Smoke")
     @DisplayName("Checking is broken asdf image")
     void testCheckIsBrokenAsdfImage() {
         new BrokenImagesPage(driver, wait).checkIsBrokenAsdfImage();
     }
 
     @Test
-    @Tag("regression")
+    @Tag("@Smoke")
+    @Tag("@Regression")
     @DisplayName("Checking is broken hjkl image")
     void testCheckIsBrokenHjklImage() {
         new BrokenImagesPage(driver, wait).checkIsBrokenHjklImage();
     }
 
     @Test
-    @Tag("regression")
+    @Tag("@Smoke")
+    @Tag("@Regression")
     @DisplayName("Checking is broken avatar image")
     void testCheckIsBrokenAvatarImage() {
         new BrokenImagesPage(driver, wait).checkIsBrokenAvatarImage();

@@ -19,29 +19,12 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
-}
-
-tasks.register('qa', Test) {
-    useJUnitPlatform()
-    if (project.hasProperty('browser')) {
-        systemProperty 'browser', "${browser}"
-    }
-}
-
-tasks.register('qa1', Test) {
     useJUnitPlatform() {
-        def suite1 = project.hasProperty("suite1")
-        def suite2 = project.hasProperty("suite2")
-
-        if (suite1) {
-            includeTestsMatching "*Test1"
-        } else if (suite2) {
-            includeTestsMatching "*Test2"
+        if (project.hasProperty('tags')) {
+            includeTags("${tags}")
         }
     }
-
-    if (project.hasProperty('browser')) {
-        systemProperty 'browser', "${browser}"
+    testLogging {
+        events "passed", "skipped", "failed"
     }
 }
