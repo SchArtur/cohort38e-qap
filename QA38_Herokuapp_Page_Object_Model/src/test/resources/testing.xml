@@ -1,25 +1,9 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Testing Suite">
-    <test name="Broken Images Test">
-        <classes>
-            <class name="tests.BrokenImagesTest">
-                <methods>
-                    <include name="testCheckIsBrokenAsdfImage"/>
-                    <include name="testCheckIsBrokenHjklImage"/>
-                    <include name="testCheckIsBrokenAvatarImage"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Drag and Drop Test">
-        <classes>
-            <class name="tests.DragAndDropTest">
-                <methods>
-                    <include name="testDragAndDropColum_A"/>
-                    <include name="testDragAndDropColum_B"/>
-                </methods>
-            </class>
-        </classes>
+<suite name="Regression" verbose="1">
+    <test name="Regression Suite">
+        <packages>
+            <package name="java.tests"/>
+        </packages>
     </test>
 </suite>

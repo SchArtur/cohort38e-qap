@@ -7,14 +7,14 @@ import pages.DragAndDropPage;
 
 public class DragAndDropTest extends BaseTest {
     @Test
-    @Tag("@testDragAndDropColum_A")
+    @Tag("smoke")
     @DisplayName("Checking of successful drag and drop A to B")
     void testDragAndDropColum_A() {
         new DragAndDropPage(driver, wait).checkIsDragAndDropColum_A();
     }
 
     @Test
-    @Tag("@testDragAndDropColum_B")
+    @Tag("regression")
     @DisplayName("Checking of successful drag and drop B to A")
     void testDragAndDropColum_B() {
         new DragAndDropPage(driver, wait).checkIsDragAndDropColum_B();

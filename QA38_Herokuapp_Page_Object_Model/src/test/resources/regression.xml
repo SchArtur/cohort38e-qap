@@ -1,14 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression" verbose="1" >
-    <test name="Regression Suite">
-        <classes>
-            <class name="tests.BrokenImagesTest" />
-        </classes>
+<suite name="Testing Suite">
+    <test name="Broken Images Test">
+        <packages>
+            <package name="java.tests">
+                <include name="*BrokenImagesTest"/>
+            </package>
+        </packages>
     </test>
-    <test name="Drag and Drop Tests">
-        <classes>
-            <class name="tests.DragAndDropTest"/>
-        </classes>
+    <test name="Drag and Drop Test">
+        <packages>
+            <package name="java.tests">
+                <include name="*DragAndDropTest"/>
+            </package>
+        </packages>
     </test>
 </suite>
