@@ -16,6 +16,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[.=' Log in ']")
     WebElement loginLink;
 
+    @FindBy(xpath = "//a[.=' Let the car work ']")
+    WebElement letCarWorkLink;
+
     public HomePage isHomePageTitlePreset() {
         assert homePageTitle.isDisplayed();
         return this;
@@ -24,5 +27,10 @@ public class HomePage extends BasePage {
     public LoginPage clickOnLoginLink() {
         clickOnElement(loginLink);
         return new LoginPage(driver, wait);
+    }
+
+    public LetTheCarWorkPage clickOnCarWorkLink() {
+        clickOnElement(letCarWorkLink);
+        return new LetTheCarWorkPage(driver, wait);
     }
 }
