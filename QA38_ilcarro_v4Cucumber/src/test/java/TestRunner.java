@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
         glue = "src/java/com/ilcarro/steps",
         tags = "@navigates",
         plugin = {"pretty", "json:build/cucumber-report/cucumber.java"}
-
 )
 
 public class TestRunner {
