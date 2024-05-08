@@ -16,17 +16,14 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//input[@id = 'city']")
     WebElement inputCity;
 
+    @FindBy(xpath = "//span[text() = 'Germany']")
+    WebElement dropDownCity;
+
     @FindBy(xpath = "//input[@id = 'dates']")
     WebElement inputDates;
 
     @FindBy(xpath = "//button[text() = 'Y’alla!']")
     WebElement submitButton;
-
-    @FindBy(xpath = "//span[text() = 'Germany']")
-    WebElement dropDownCity;
-
-    @FindBy(xpath = "//button[text() = 'Search']")
-    WebElement searchButton;
 
     @FindBy(xpath = "//h3[text() = 'No available cars in Berlin']")
         WebElement messageAfterSearch;
