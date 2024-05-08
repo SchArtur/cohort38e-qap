@@ -20,7 +20,7 @@ public class SearchPageSteps {
 
     @When("User enter city")
     public void enterValidCity() {
-        new SearchPage(BasePage.driver, BasePage.wait).enterData("Berlin");
+        new SearchPage(BasePage.driver, BasePage.wait).enterData("Haifa");
     }
 
     @When("User click on dropdown with name of city")
@@ -38,13 +38,13 @@ public class SearchPageSteps {
         new SearchPage(BasePage.driver, BasePage.wait).clickOnDatesInDatePicker();
     }
 
-    @Given("User click button search!")
+    @Given("User click button Yalla!")
     public void clickYalla() {
-        new SearchPage(BasePage.driver, BasePage.wait).handleClickSubmitButton();
+        new SearchPage(BasePage.driver, BasePage.wait).handleClickSubmitButtonYalla();
     }
 
-    @And("User checked success message after search")
-    public void checkSuccessMessage() {
-        new SearchPage(BasePage.driver, BasePage.wait).checkNoAvailableCarsMessage();
+    @And("User checked success adding car after search")
+    public void checkSuccessAddCar() {
+        new SearchPage(BasePage.driver, BasePage.wait).checkAvailableCars();
     }
 }

@@ -18,7 +18,7 @@ public class LetTheCarWorkPage extends BasePage {
     @FindBy(xpath = "//input[@id = 'pickUpPlace']")
     WebElement addressInput;
 
-    @FindBy(xpath = "//span[text() = 'Aankomstpassage']")
+    @FindBy(xpath = "//span[text() = 'Israel']")
     WebElement dropDownAddress;
 
     @FindBy(xpath = "//input[@id = 'make']")
@@ -57,8 +57,8 @@ public class LetTheCarWorkPage extends BasePage {
     @FindBy(xpath = "//button[@type = 'submit']")
     WebElement submitButton;
 
-    @FindBy(xpath = "//h1[text() = 'Car adding failed']")
-    WebElement messageAfterUnsuccessfulCarAdding;
+    @FindBy(xpath = "//h1[text() = 'Car added']")
+    WebElement messageAfterSuccessfulCarAdding;
 
     @FindBy(xpath = "//button[text() = 'Ok']")
     WebElement buttonOk;
@@ -89,11 +89,6 @@ public class LetTheCarWorkPage extends BasePage {
         return this;
     }
 
-    public LetTheCarWorkPage handleClickButtonOk() {
-        clickOnElement(buttonOk);
-        return this;
-    }
-
     public LetTheCarWorkPage fillAboutArea() {
         clickOnElement(aboutTextarea);
         aboutTextarea.sendKeys("White excellent car");
@@ -118,8 +113,8 @@ public class LetTheCarWorkPage extends BasePage {
         return enterData(dataTableList.get(0).get("address"), dataTableList.get(0).get("manufacture"), dataTableList.get(0).get("model"), dataTableList.get(0).get("year"), dataTableList.get(0).get("seats"), dataTableList.get(0).get("carClass"), dataTableList.get(0).get("registrationNumber"), dataTableList.get(0).get("price"));
     }
 
-    public LetTheCarWorkPage isUnSuccessCarToRent() {
-        assert getElement(messageAfterUnsuccessfulCarAdding).getText().equals("Car adding failed");
+    public LetTheCarWorkPage isSuccessfulCarToRent() {
+        assert getElement(messageAfterSuccessfulCarAdding).getText().equals("Car added");
         return this;
     }
 }

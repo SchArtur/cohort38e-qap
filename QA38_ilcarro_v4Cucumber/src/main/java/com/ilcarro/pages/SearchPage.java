@@ -1,6 +1,7 @@
 package com.ilcarro.pages;
 
 import io.cucumber.datatable.DataTable;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,17 +17,17 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//input[@id = 'city']")
     WebElement inputCity;
 
-    @FindBy(xpath = "//span[text() = 'Germany']")
+    @FindBy(xpath = "//span[text() = 'Israel']")
     WebElement dropDownCity;
 
     @FindBy(xpath = "//input[@id = 'dates']")
     WebElement inputDates;
 
+    @FindBy(css = ".car-card")
+    WebElement carCard;
+
     @FindBy(xpath = "//button[text() = 'Y’alla!']")
     WebElement submitButton;
-
-    @FindBy(xpath = "//h3[text() = 'No available cars in Berlin']")
-        WebElement messageAfterSearch;
 
     @FindBy(xpath = "//div[contains(text(), '21')]")
         WebElement startDate;
@@ -34,7 +35,7 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//div[contains(text(), '24')]")
     WebElement endDate;
 
-    public SearchPage handleClickSubmitButton() {
+    public SearchPage handleClickSubmitButtonYalla() {
         clickOnElement(submitButton);
         return this;
     }
@@ -49,8 +50,9 @@ public class SearchPage extends BasePage {
         return this;
     }
 
-    public SearchPage checkNoAvailableCarsMessage() {
-        assert getElement(messageAfterSearch).getText().equals("No available cars in Berlin");
+    public SearchPage checkAvailableCars() {
+        boolean isCarCardDisplayed = carCard.isDisplayed();
+        Assert.assertTrue("Car card is not displayed.", isCarCardDisplayed);
         return this;
     }
 

@@ -26,7 +26,7 @@ public class LetTheCarWorkSteps {
 
     @When("User enter address, manufacture, model, year, seats, carClass, registrationNumber and price ")
     public void enterValidEmailAndPassword() {
-        new LetTheCarWorkPage(BasePage.driver, BasePage.wait).enterData("Amsterdam Airport Schiphol (AMS), Aankomstpassage, Schiphol, Netherlands", "Germany", "Audi RS8", "2022", "2", "passenger сar", "D2JYJ6WFOG", "900");
+        new LetTheCarWorkPage(BasePage.driver, BasePage.wait).enterData("Haifa", "Germany", "Audi RS8", "2022", "2", "passenger сar", "D2JYJ6WFOGGAB", "900");
     }
 
     @Given("User click fuel")
@@ -54,13 +54,8 @@ public class LetTheCarWorkSteps {
         new LetTheCarWorkPage(BasePage.driver, BasePage.wait).handlerClickButtonSubmit();
     }
 
-    @Given("User click button Ok")
-    public void clickButtonOk() {
-        new LetTheCarWorkPage(BasePage.driver, BasePage.wait).handleClickButtonOk();
-    }
-
-    @And("User checked unsuccessful message after submit")
+    @And("User checked successful message after submit")
     public void checkSuccessMessage() {
-        new LetTheCarWorkPage(BasePage.driver, BasePage.wait).isUnSuccessCarToRent();
+        new LetTheCarWorkPage(BasePage.driver, BasePage.wait).isSuccessfulCarToRent();
     }
 }
