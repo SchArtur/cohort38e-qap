@@ -7,4 +7,5 @@ include 'QA38_DemoShop_v3'
 include 'QA38_Herokuapp_Page_Object_Model'
 include 'QA38_Phonebook_v4Cucumber'
 include 'QA38_ilcarro_v4Cucumber'
+include 'QA38QPro_API_RA'
 
