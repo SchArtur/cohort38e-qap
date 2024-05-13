@@ -16,7 +16,7 @@ public class LoginTestRa extends TestBase{
             .build();
 
     @Test
-    public void loginSuccessTest1() {
+    public void loginSuccessTest() {
         AuthResponseDto dto = given()
                 .contentType(ContentType.JSON)
                 .body(auth)
@@ -43,10 +43,10 @@ public class LoginTestRa extends TestBase{
     }
 
     @Test
-    public void loginUnsuccessTestWrongPassword() {
+    public void loginWithWrongPasswordTest() {
         ErrorDto errorDto = given().body(AuthRequestDto.builder()
-                .username("sasha@gamil.com")
-                .password("Maus3123452#").build())
+                    .username("sasha@gamil.com")
+                    .password("Maus3123452#").build())
                 .post("/user/login/usernamepassword")
                 .then()
                 .assertThat().statusCode(401)
@@ -57,10 +57,10 @@ public class LoginTestRa extends TestBase{
     }
 
     @Test
-    public void loginUnsuccessTestWrongEmail() {
+    public void loginWithWrongEmailTest() {
         ErrorDto errorDto = given().body(AuthRequestDto.builder()
-                        .username("sash@gamil.com")
-                        .password("Maus3123452#$").build())
+                    .username("sash@gamil.com")
+                    .password("Maus3123452#$").build())
                 .post("/user/login/usernamepassword")
                 .then()
                 .assertThat().statusCode(401)

@@ -5,6 +5,7 @@ import com.phonebook.ContactDto;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.core.StringContains.containsString;
 
 public class GetAllContactTest extends TestBase{
     @Test
@@ -21,4 +22,16 @@ public class GetAllContactTest extends TestBase{
             System.out.println("===========================================");
         }
     }
+
+    @Test
+    public void getAllContactsNegativeTest() {
+        given()
+            .header(AUTH, "Invalid Token")
+            .when()
+            .get("contacts")
+            .then()
+            .assertThat().statusCode(401)
+            .body(containsString("Unauthorized"));
+    }
 }
+
