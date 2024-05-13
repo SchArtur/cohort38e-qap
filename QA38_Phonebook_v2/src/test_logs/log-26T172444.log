@@ -1,0 +1,20 @@
+121  [Test worker] INFO  core.TestProperties -- Загружаем application.properties
+124  [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+10255 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+10356 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+10598 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением Manuel1234$
+10679 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+10728 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/add']
+12156 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Name'] значением Test
+12246 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Last Name' значением Testoviy
+12315 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Phone' значением 111111111111
+12395 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='email' значением test@test.com
+12476 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='Address' значением Addresss
+12553 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.cssSelector: [placeholder='description' значением Descr
+12624 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //*[text()='Save']
+12662 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Успешное удаление контакта в class phonebook.DeleteContactTests
+12663 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/contacts']
+13223 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //h2[text()='Test']
+13268 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.xpath: //button[text()='Remove']
+16929 [Test worker] ERROR extension.RunnerExtension -- Тест Успешное удаление контакта в class phonebook.DeleteContactTests завершен с ошибкой. Скриншот - /Users/Artur/IdeaProjects/cohort38e-qap/QA38_Phonebook_v2/screenshots/screen1714141501809.png
+16930 [Test worker] INFO  extension.RunnerExtension -- ======================================================================

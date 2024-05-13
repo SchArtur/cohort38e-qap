@@ -1,0 +1,9 @@
+82   [Test worker] INFO  core.TestProperties -- Загружаем application.properties
+83   [Test worker] INFO  core.AppManager -- Инициализируем драйвер chrome браузера
+8918 [Test worker] INFO  extension.RunnerExtension -- Запуск теста Проверка ввода неверного пароля в class phonebook.LoginTests
+8922 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.cssSelector: [href='/login']
+9005 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: email значением manuel@gm.com
+9192 [Test worker] INFO  page_helpers.BaseHelper -- Заполняем поле ввода с локатором By.name: password значением 234t234
+9250 [Test worker] INFO  page_helpers.BaseHelper -- Делаем click по элементу с локатором By.name: login
+11351 [Test worker] INFO  extension.RunnerExtension -- Тест Проверка ввода неверного пароля в class phonebook.LoginTests успешно завершен
+11351 [Test worker] INFO  extension.RunnerExtension -- ======================================================================
