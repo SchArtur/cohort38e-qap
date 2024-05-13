@@ -8,4 +8,5 @@ include 'QA38_DemoQA_POM'
 include 'QA38_Phonebook_v4Cucumber'
 include 'QA38_IlCaro'
 include 'QA38_Phonebook_v5_API_RA'
+include 'QA38_Phonebook'
 

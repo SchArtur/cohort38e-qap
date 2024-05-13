@@ -1,4 +1,5 @@
 package com.phonebook;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,4 +16,4 @@ public class ErrorDto {
     private String path;
     private int status;
     private Object message;
- }
+}
