@@ -4,12 +4,14 @@ import com.phonebook.AuthRequestDto;
 import com.phonebook.AuthResponseDto;
 import com.phonebook.ErrorDto;
 import io.restassured.http.ContentType;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
+@Tag("@ALL")
 public class LoginTestRA extends TestBase {
     // Вызываем класс AuthRequestDto
     AuthRequestDto auth = AuthRequestDto.builder() // экземпляр объекта класса для представления данных авторизации, таких как логин и пароль, которые будут отправлены на сервер для выполнения аутентификации
@@ -19,6 +21,7 @@ public class LoginTestRA extends TestBase {
 
     //Пишем тест
     @Test
+    @Tag("@SMOKE")
     public void loginSuccessTest() {
         // Отправляем запрос на сервер
         AuthResponseDto dto = given()
@@ -47,6 +50,7 @@ public class LoginTestRA extends TestBase {
     }
 
     @Test
+    @Tag("@SMOKE")
     public void loginWithWrongPasswordTest() {
         ErrorDto errorDto = given().body(AuthRequestDto.builder()
                         .username("wrong@email.com") //! Логин исправляем на неверный

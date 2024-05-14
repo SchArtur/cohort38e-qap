@@ -18,7 +18,7 @@ public class BrokenLinksImagesTests extends BaseTest {
     }
 
     @Test
-    @Tag("SMOKE")
+    @Tag("@SMOKE")
     @DisplayName("Проверка валидной ссылки")
     void test1() {
         new BrokenLinksImagesPage(driver, wait)
@@ -33,7 +33,7 @@ public class BrokenLinksImagesTests extends BaseTest {
     }
 
     @Test
-    @Tag("SMOKE")
+    @Tag("@SMOKE")
     @DisplayName("Проверка отображения изображения")
     void test3() {
         new BrokenLinksImagesPage(driver, wait)

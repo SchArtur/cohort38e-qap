@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:7.9.0'
+    implementation platform('org.junit:junit-bom:5.9.1')
+    implementation 'org.junit.jupiter:junit-jupiter'
 
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'io.rest-assured:rest-assured:5.4.0'
@@ -24,5 +25,12 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useJUnitPlatform() {
+        if (project.hasProperty('tags')) {
+            includeTags("${tags}")
+        }
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }

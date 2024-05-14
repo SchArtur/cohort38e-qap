@@ -2,12 +2,16 @@ package com.phonebook.testsRA;
 
 import com.phonebook.AllContactsDto;
 import com.phonebook.ContactDto;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
+@Tag("@Contact")
+@Tag("@ALL")
 public class GetAllContactsTest extends TestBase {
     @Test
+    @Tag("@SMOKE")
     public void getAllContactsPositiveTest() {
         AllContactsDto contactsDto = given()
                 .header(AUTH, TOKEN)
