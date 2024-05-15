@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FirstCalcTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-05-15T00:18:29" hostname="MacBook-Air-Alexandra.local" time="34.741">
+<testsuite name="FirstCalcTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-05-15T13:57:57" hostname="MacBook-Air-Alexandra.local" time="23.533">
   <properties/>
-  <testcase name="checkSumOfTwoNumbersTest()" classname="FirstCalcTest" time="34.741">
-    <failure message="org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up&#10;Build info: version: '4.19.0', revision: '5f9cec8963'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '17.0.11'&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Command: [611d189e-a4a3-4b88-9411-d99bcfaed9aa, findElement {using=accessibility id, value=my.android.calc:id/b021}]&#10;Capabilities {appium:appActivity: my.android.calc.MainActivity, appium:appPackage: my.android.calc, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: my.android.calc.MainActivity, appPackage: my.android.calc, automationName: UiAutomator2, platformName: ANDROID}, appium:deviceName: emulator-5554, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:takesScreenshot: true, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}&#10;Session ID: 611d189e-a4a3-4b88-9411-d99bcfaed9aa" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+  <testcase name="test1()" classname="FirstCalcTest" time="23.533">
+    <failure message="org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up&#10;Build info: version: '4.19.0', revision: '5f9cec8963'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '17.0.11'&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Command: [11c4334b-62f7-48a9-b49e-dec076eb5aec, getAlertText {}]&#10;Capabilities {appium:app: /Users/alexandra/Desktop/co..., appium:appPackage: my.android.calc, appium:automationName: UIAutomator2, appium:avd: Pixel, appium:databaseEnabled: false, appium:desired: {app: /Users/alexandra/Desktop/co..., automationName: UIAutomator2, avd: Pixel, platformName: ANDROID, platformVersion: 14}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2220, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 14, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:viewportRect: {height: 2154, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}&#10;Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
 Build info: version: '4.19.0', revision: '5f9cec8963'
 System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '17.0.11'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [611d189e-a4a3-4b88-9411-d99bcfaed9aa, findElement {using=accessibility id, value=my.android.calc:id/b021}]
-Capabilities {appium:appActivity: my.android.calc.MainActivity, appium:appPackage: my.android.calc, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: my.android.calc.MainActivity, appPackage: my.android.calc, automationName: UiAutomator2, platformName: ANDROID}, appium:deviceName: emulator-5554, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:takesScreenshot: true, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 611d189e-a4a3-4b88-9411-d99bcfaed9aa
+Command: [11c4334b-62f7-48a9-b49e-dec076eb5aec, getAlertText {}]
+Capabilities {appium:app: /Users/alexandra/Desktop/co..., appium:appPackage: my.android.calc, appium:automationName: UIAutomator2, appium:avd: Pixel, appium:databaseEnabled: false, appium:desired: {app: /Users/alexandra/Desktop/co..., automationName: UIAutomator2, avd: Pixel, platformName: ANDROID, platformVersion: 14}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2220, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 14, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:viewportRect: {height: 2154, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec
 	at java.base@17.0.11/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -20,11 +20,10 @@ Session ID: 611d189e-a4a3-4b88-9411-d99bcfaed9aa
 	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
 	at app//io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
 	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at app//org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at app//FirstCalcTest.checkSumOfTwoNumbersTest(FirstCalcTest.java:125)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
+	at app//io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
+	at app//org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1163)
+	at app//FirstCalcTest.test1(FirstCalcTest.java:36)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,6 +110,18 @@ Session ID: 611d189e-a4a3-4b88-9411-d99bcfaed9aa
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[Appium Server started
+?[35m[Appium]?[39m Welcome to Appium v2.5.4
+?[35m[Appium]?[39m Non-default server args:
+?[35m[Appium]?[39m { address: ?[32m'127.0.0.1'?[39m }
+?[35m[Appium]?[39m The autodetected Appium home path: /Users/alexandra/.appium
+?[35m[Appium]?[39m Attempting to load driver uiautomator2...
+?[35m[Appium]?[39m Requiring driver at /Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+[Appium] AndroidUiautomator2Driver has been successfully loaded in 0.398s
+[Appium] Appium REST http interface listener started on http://127.0.0.1:4723
+[Appium] Available drivers:
+[Appium]   - uiautomator2@3.5.0 (automationName 'UiAutomator2')
+[Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

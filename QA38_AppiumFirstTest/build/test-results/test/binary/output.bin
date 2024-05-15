@@ -1,0 +1,12 @@
+Appium Server started
+,[35m[Appium][39m Welcome to Appium v2.5.4
+,[35m[Appium][39m Non-default server args:
+6[35m[Appium][39m { address: [32m'127.0.0.1'[39m }
+O[35m[Appium][39m The autodetected Appium home path: /Users/alexandra/.appium
+=[35m[Appium][39m Attempting to load driver uiautomator2...
+w[35m[Appium][39m Requiring driver at /Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+J[Appium] AndroidUiautomator2Driver has been successfully loaded in 0.398s
+N[Appium] Appium REST http interface listener started on http://127.0.0.1:4723
+[Appium] Available drivers:
+@[Appium]   - uiautomator2@3.5.0 (automationName 'UiAutomator2')
+p[Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.

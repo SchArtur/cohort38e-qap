@@ -12,28 +12,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Instant;
 import java.util.concurrent.TimeUnit;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FirstCalcTest {
 
     @Test
     void test1() throws MalformedURLException {
-
-        // Создаем объект DesiredCapabilities для настройки параметров сеанса Appium
-        //DesiredCapabilities capabilities = new DesiredCapabilities();
-        // Указываем платформу - Android
-        //capabilities.setCapability("platformName", "Android");
-        // Указываем движок автоматизации - UiAutomator2
-        //capabilities.setCapability("automationName", "UiAutomator2");
-        //Указываем apk тестируемого приложения (Будет устанавливаться каждый раз)
-        //capabilities.setCapability("app", new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath());
-
+        AppiumServerStarter.startServer();
         //Настройки напрямую от UiAutomator2. Нужно указать только apk
         UiAutomator2Options capabilities = new UiAutomator2Options()
-                .setApp(new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath());
+                .setApp(new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath())
+                .setPlatformVersion("14")
+                .setAvd("Pixel");
         // Создаем объект AndroidDriver с указанными capabilities
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
         // Устанавливаем неявное ожидание в 10 секунд
@@ -46,6 +36,7 @@ public class FirstCalcTest {
 
         // Завершаем сеанс Appium и закрываем драйвер
         driver.quit();
+        AppiumServerStarter.stopServer();
     }
 
     @Test
@@ -82,6 +73,7 @@ public class FirstCalcTest {
 
     @Test
     void test3() throws MalformedURLException {
+        AppiumServerStarter.startServer();
         // Создаем объект DesiredCapabilities для настройки параметров сеанса Appium
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // Указываем платформу - Android
@@ -91,7 +83,8 @@ public class FirstCalcTest {
         // Указываем пакет приложения
         capabilities.setCapability("appPackage", "com.google.android.deskclock");
         // Указываем Activity приложения
-        capabilities.setCapability("appActivity", "com.google.android.deskclock.DeskClock");
+        capabilities.setCapability("appActivity", "com.android.deskclock.DeskClock");
+
 
         // Создаем объект AndroidDriver с указанными capabilities
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
@@ -106,14 +99,16 @@ public class FirstCalcTest {
         WebElement textElement = driver.findElement(By.className("android.widget.EditText"));
 
         // Проверяем, что текст элемента соответствует ожидаемому
-        assertEquals(textElement.getText(), "Search for a city", "Текст не найден");
+        Assertions.assertEquals(textElement.getText(), "Search for a city", "Текст не найден");
 
         // Завершаем сеанс Appium и закрываем драйвер
         driver.quit();
+        AppiumServerStarter.stopServer();
     }
 
     @Test
     void checkSumOfTwoNumbersTest() throws MalformedURLException {
+        AppiumServerStarter.startServer();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "UiAutomator2");
@@ -122,10 +117,10 @@ public class FirstCalcTest {
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        WebElement numberFive = driver.findElement(By.id("my.android.calc:id/b021"));
-        WebElement plus = driver.findElement(By.id("my.android.calc:id/b032"));
-        WebElement numberThree = driver.findElement(By.id("my.android.calc:id/b043"));
-        WebElement even = driver.findElement(By.id("my.android.calc:id/b044"));
+        WebElement numberFive = driver.findElement(AppiumBy.id("my.android.calc:id/b021"));
+        WebElement plus = driver.findElement(AppiumBy.id("my.android.calc:id/b032"));
+        WebElement numberThree = driver.findElement(AppiumBy.id("my.android.calc:id/b043"));
+        WebElement even = driver.findElement(AppiumBy.id("my.android.calc:id/b044"));
 
         numberFive.click();
         plus.click();
@@ -139,5 +134,6 @@ public class FirstCalcTest {
         Assertions.assertEquals(expectedResult, actualResult, "Sum of numbers should be " + expectedResult);
 
         driver.quit();
+        AppiumServerStarter.stopServer();
     }
 }
