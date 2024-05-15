@@ -18,19 +18,12 @@ public class FirstCalcTests {
 
     @Test
     void test1() throws MalformedURLException {
-
-        // Создаем объект DesiredCapabilities для настройки параметров сеанса Appium
-        //DesiredCapabilities capabilities = new DesiredCapabilities();
-        // Указываем платформу - Android
-        //capabilities.setCapability("platformName", "Android");
-        // Указываем движок автоматизации - UiAutomator2
-        //capabilities.setCapability("automationName", "UiAutomator2");
-        //Указываем apk тестируемого приложения (Будет устанавливаться каждый раз)
-        //capabilities.setCapability("app", new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath());
-
+        AppiumServerStarter.startServer();
         //Настройки напрямую от UiAutomator2. Нужно указать только apk
         UiAutomator2Options capabilities = new UiAutomator2Options()
-                .setApp(new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath());
+                .setApp(new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath())
+                .setPlatformVersion("14")
+                .setAvd("Pixel");
         // Создаем объект AndroidDriver с указанными capabilities
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
         // Устанавливаем неявное ожидание в 10 секунд
@@ -43,6 +36,7 @@ public class FirstCalcTests {
 
         // Завершаем сеанс Appium и закрываем драйвер
         driver.quit();
+        AppiumServerStarter.stopServer();
     }
 
     @Test
@@ -79,6 +73,7 @@ public class FirstCalcTests {
 
     @Test
     void test3() throws MalformedURLException {
+        AppiumServerStarter.startServer();
         // Создаем объект DesiredCapabilities для настройки параметров сеанса Appium
         DesiredCapabilities capabilities = new DesiredCapabilities();
         // Указываем платформу - Android
@@ -88,7 +83,8 @@ public class FirstCalcTests {
         // Указываем пакет приложения
         capabilities.setCapability("appPackage", "com.google.android.deskclock");
         // Указываем Activity приложения
-        capabilities.setCapability("appActivity", "com.google.android.deskclock.DeskClock");
+        capabilities.setCapability("appActivity", "com.android.deskclock.DeskClock");
+
 
         // Создаем объект AndroidDriver с указанными capabilities
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
@@ -107,5 +103,6 @@ public class FirstCalcTests {
 
         // Завершаем сеанс Appium и закрываем драйвер
         driver.quit();
+        AppiumServerStarter.stopServer();
     }
 }
