@@ -12,9 +12,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class FirstCalcTest {
+
     @Test
     void test1() throws MalformedURLException {
 
@@ -102,9 +106,38 @@ public class FirstCalcTest {
         WebElement textElement = driver.findElement(By.className("android.widget.EditText"));
 
         // Проверяем, что текст элемента соответствует ожидаемому
-        Assertions.assertEquals(textElement.getText(), "Search for a city", "Текст не найден");
+        assertEquals(textElement.getText(), "Search for a city", "Текст не найден");
 
         // Завершаем сеанс Appium и закрываем драйвер
+        driver.quit();
+    }
+
+    @Test
+    void checkSumOfTwoNumbersTest() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("appPackage", "my.android.calc");
+        capabilities.setCapability("appActivity", "my.android.calc.MainActivity");
+        AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        WebElement numberFive = driver.findElement(By.id("my.android.calc:id/b021"));
+        WebElement plus = driver.findElement(By.id("my.android.calc:id/b032"));
+        WebElement numberThree = driver.findElement(By.id("my.android.calc:id/b043"));
+        WebElement even = driver.findElement(By.id("my.android.calc:id/b044"));
+
+        numberFive.click();
+        plus.click();
+        numberThree.click();
+        even.click();
+
+        WebElement result = driver.findElement(By.id("my.android.calc:id/result"));
+        int actualResult = Integer.parseInt(result.getText());
+        int expectedResult = 8;
+
+        Assertions.assertEquals(expectedResult, actualResult, "Sum of numbers should be " + expectedResult);
+
         driver.quit();
     }
 }
