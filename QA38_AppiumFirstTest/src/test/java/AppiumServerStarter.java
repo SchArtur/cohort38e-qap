@@ -11,7 +11,7 @@ public class AppiumServerStarter {
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
 
         // Устанавливаем путь к Appium
-        builder.withAppiumJS(new File("/usr/local/bin/appium/"));
+        builder.withAppiumJS(new File("/usr/local/bin/appium"));
 
         // Устанавливаем порт для сервера Appium
         builder.withIPAddress("127.0.0.1").usingPort(4723);

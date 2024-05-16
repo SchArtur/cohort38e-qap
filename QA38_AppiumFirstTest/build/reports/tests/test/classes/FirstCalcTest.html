@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">23.533s</div>
+<div class="counter">15.542s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,13 +76,14 @@
 <a name="test1()"></a>
 <h3 class="failures">test1()</h3>
 <span class="code">
-<pre>org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+<pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.19.0', revision: '5f9cec8963'
 System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '17.0.11'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [11c4334b-62f7-48a9-b49e-dec076eb5aec, getAlertText {}]
-Capabilities {appium:app: /Users/alexandra/Desktop/co..., appium:appPackage: my.android.calc, appium:automationName: UIAutomator2, appium:avd: Pixel, appium:databaseEnabled: false, appium:desired: {app: /Users/alexandra/Desktop/co..., automationName: UIAutomator2, avd: Pixel, platformName: ANDROID, platformVersion: 14}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2220, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 14, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:viewportRect: {height: 2154, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec
+Command: [66f7f935-33ac-4c9a-842d-217e94532e73, findElement {using=id, value=my.android.calc:id/b021}]
+Capabilities {appium:app: /Users/alexandra/Desktop/co..., appium:appPackage: my.android.calc, appium:automationName: UIAutomator2, appium:avd: Pixel, appium:databaseEnabled: false, appium:desired: {app: /Users/alexandra/Desktop/co..., automationName: UIAutomator2, avd: Pixel, platformName: ANDROID, platformVersion: 14}, appium:deviceApiLevel: 26, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2220, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 8.0.0, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:viewportRect: {height: 2154, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 66f7f935-33ac-4c9a-842d-217e94532e73
 	at java.base@17.0.11/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -94,10 +95,11 @@ Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec
 	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
 	at app//io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
 	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
-	at app//io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:307)
-	at app//org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1163)
-	at app//FirstCalcTest.test1(FirstCalcTest.java:36)
+	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at app//org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at app//FirstCalcTest.test1(FirstCalcTest.java:33)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -198,7 +200,7 @@ Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec
 </thead>
 <tr>
 <td class="failures">test1()</td>
-<td class="failures">23.533s</td>
+<td class="failures">15.542s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -206,18 +208,287 @@ Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>Appium Server started
-?[35m[Appium]?[39m Welcome to Appium v2.5.4
+<pre>?[35m[Appium]?[39m Welcome to Appium v2.5.4
 ?[35m[Appium]?[39m Non-default server args:
 ?[35m[Appium]?[39m { address: ?[32m'127.0.0.1'?[39m }
 ?[35m[Appium]?[39m The autodetected Appium home path: /Users/alexandra/.appium
 ?[35m[Appium]?[39m Attempting to load driver uiautomator2...
 ?[35m[Appium]?[39m Requiring driver at /Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/build/index.js
-[Appium] AndroidUiautomator2Driver has been successfully loaded in 0.398s
+[Appium] AndroidUiautomator2Driver has been successfully loaded in 0.400s
 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723
 [Appium] Available drivers:
 [Appium]   - uiautomator2@3.5.0 (automationName 'UiAutomator2')
 [Appium] No plugins have been installed. Use the &quot;appium plugin&quot; command to install the one(s) you want to use.
+?[38;5;0m[HTTP]?[0m ?[37m--&gt;?[39m ?[37mGET?[39m ?[37m/status?[39m
+?[38;5;0m[HTTP]?[0m {}
+?[38;5;16m[AppiumDriver@5237]?[0m Calling AppiumDriver.getStatus() with args: []
+?[38;5;16m[AppiumDriver@5237]?[0m Responding to client with driver.getStatus() result: {&quot;ready&quot;:true,&quot;message&quot;:&quot;The server is ready to accept new connections&quot;,&quot;build&quot;:{&quot;version&quot;:&quot;2.5.4&quot;}}
+?[38;5;0m[HTTP]?[0m &lt;-- GET /status 200 8 ms - 110
+?[38;5;0m[HTTP]?[0m 
+?[38;5;0m[HTTP]?[0m ?[37m--&gt;?[39m ?[37mGET?[39m ?[37m/status?[39m
+?[38;5;0m[HTTP]?[0m {}
+?[38;5;16m[AppiumDriver@5237]?[0m Calling AppiumDriver.getStatus() with args: []
+?[38;5;16m[AppiumDriver@5237]?[0m Responding to client with driver.getStatus() result: {&quot;ready&quot;:true,&quot;message&quot;:&quot;The server is ready to accept new connections&quot;,&quot;build&quot;:{&quot;version&quot;:&quot;2.5.4&quot;}}
+?[38;5;0m[HTTP]?[0m &lt;-- GET /status 200 2 ms - 110
+Appium Server started
+?[38;5;0m[HTTP]?[0m 
+?[38;5;0m[HTTP]?[0m Request idempotency key: 41e14700-aa1c-412c-a16e-d668a1281031
+?[38;5;0m[HTTP]?[0m ?[37m--&gt;?[39m ?[37mPOST?[39m ?[37m/session?[39m
+?[38;5;0m[HTTP]?[0m {&quot;capabilities&quot;:{&quot;firstMatch&quot;:[{}],&quot;alwaysMatch&quot;:{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;appium:automationName&quot;:&quot;UIAutomator2&quot;,&quot;appium:avd&quot;:&quot;Pixel&quot;,&quot;appium:platformVersion&quot;:&quot;14&quot;,&quot;appium:app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;}}}
+?[38;5;16m[AppiumDriver@5237]?[0m Calling AppiumDriver.createSession() with args: [null,null,{&quot;firstMatch&quot;:[{}],&quot;alwaysMatch&quot;:{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;appium:automationName&quot;:&quot;UIAutomator2&quot;,&quot;appium:avd&quot;:&quot;Pixel&quot;,&quot;appium:platformVersion&quot;:&quot;14&quot;,&quot;appium:app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;}}]
+?[38;5;16m[AppiumDriver@5237]?[0m Event 'newSessionRequested' logged at 1715872957550 (18:22:37 GMT+0300 (Moscow Standard Time))
+[Appium] Attempting to find matching driver for automationName 'UIAutomator2' and platformName 'ANDROID'
+[Appium] The 'uiautomator2' driver was installed and matched caps.
+[Appium] Will require it at /Users/alexandra/.appium/node_modules/appium-uiautomator2-driver
+[Appium] Requiring driver at /Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+?[38;5;16m[AppiumDriver@5237]?[0m Appium v2.5.4 creating new AndroidUiautomator2Driver (v3.5.0) session
+?[38;5;16m[AppiumDriver@5237]?[0m Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+?[38;5;16m[AppiumDriver@5237]?[0m Appium's BaseDriver version is 9.6.0
+?[38;5;16m[AppiumDriver@5237]?[0m AndroidUiautomator2Driver's BaseDriver version is 9.6.0
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m Creating session with W3C capabilities: {
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m   &quot;alwaysMatch&quot;: {
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m     &quot;platformName&quot;: &quot;ANDROID&quot;,
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m     &quot;appium:automationName&quot;: &quot;UIAutomator2&quot;,
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m     &quot;appium:avd&quot;: &quot;Pixel&quot;,
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m     &quot;appium:platformVersion&quot;: &quot;14&quot;,
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m     &quot;appium:app&quot;: &quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m   },
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m   &quot;firstMatch&quot;: [
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m     {}
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m   ]
+?[38;5;32m[AndroidUiautomator2Driver@9be6]?[0m }
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Session created with session id: 66f7f935-33ac-4c9a-842d-217e94532e73
+?[38;5;48m[ADB]?[0m Found 1 'build-tools' folders under '/Users/alexandra/Library/Android/sdk' (newest first):
+?[38;5;48m[ADB]?[0m     /Users/alexandra/Library/Android/sdk/build-tools/34.0.0
+?[38;5;48m[ADB]?[0m Using 'adb' from '/Users/alexandra/Library/Android/sdk/platform-tools/adb'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+?[38;5;48m[ADB]?[0m Trying to find 'Pixel' emulator
+?[38;5;48m[ADB]?[0m Getting connected emulators
+?[38;5;48m[ADB]?[0m Getting connected devices
+?[38;5;48m[ADB]?[0m Connected devices: [{&quot;udid&quot;:&quot;emulator-5554&quot;,&quot;state&quot;:&quot;device&quot;}]
+?[38;5;48m[ADB]?[0m 1 emulator connected
+?[38;5;48m[ADB]?[0m Overriding /Users/alexandra/.emulator_console_auth_token with an empty string to avoid telnet authentication for emulator commands
+?[38;5;48m[ADB]?[0m Executing Emulator console command: avd name
+?[38;5;48m[ADB]?[0m Found emulator 'Pixel' on port 5554
+?[38;5;48m[ADB]?[0m Setting device id to emulator-5554
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Not launching AVD because it is already running.
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Using device: emulator-5554
+?[38;5;48m[ADB]?[0m Using 'adb' from '/Users/alexandra/Library/Android/sdk/platform-tools/adb'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+?[38;5;48m[ADB]?[0m Setting device id to emulator-5554
+?[38;5;64m[BaseDriver]?[0m Using local app '/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Checking whether app is actually present
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+?[38;5;48m[ADB]?[0m Current device property 'ro.build.version.sdk': 26
+?[38;5;48m[ADB]?[0m Device API level: 26
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Parsing package and activity from app manifest
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+?[38;5;48m[ADB]?[0m Package name: 'my.android.calc'
+?[38;5;48m[ADB]?[0m Main activity name: 'my.android.calc.MainActivity'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Parsed package and activity are: my.android.calc/my.android.calc.MainActivity
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Pushing settings apk to the device...
+?[38;5;48m[ADB]?[0m Getting package info for 'io.appium.settings'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+?[38;5;48m[ADB]?[0m The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('5.8.1' &gt;= '5.8.1')
+?[38;5;48m[ADB]?[0m There is no need to install/upgrade '/Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m io.appium.settings is already running. There is no need to reset its permissions.
+?[38;5;80m[Logcat]?[0m Starting logs capture with command: /Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Forwarding UiAutomator2 Server port 6790 to local port 8200
+?[38;5;48m[ADB]?[0m Forwarding system: 8200 to device: 6790
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8200 tcp:6790'
+?[38;5;48m[ADB]?[0m Getting package info for 'io.appium.uiautomator2.server'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+?[38;5;48m[ADB]?[0m Getting install status for io.appium.uiautomator2.server.test
+?[38;5;48m[ADB]?[0m Checking app cert for /Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+?[38;5;48m[ADB]?[0m Using 'apksigner.jar' from '/Users/alexandra/Library/Android/sdk/build-tools/34.0.0/lib/apksigner.jar'
+?[38;5;48m[ADB]?[0m Starting apksigner: /usr/bin/java -Xmx1024M -Xss1m -jar /Users/alexandra/Library/Android/sdk/build-tools/34.0.0/lib/apksigner.jar verify --print-certs /Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk
+?[38;5;48m[ADB]?[0m 'io.appium.uiautomator2.server.test' is installed
+?[38;5;48m[ADB]?[0m The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('7.0.7' &gt;= '7.0.7')
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Server packages status: [{&quot;installState&quot;:&quot;sameVersionInstalled&quot;,&quot;appPath&quot;:&quot;/Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.7.apk&quot;,&quot;appId&quot;:&quot;io.appium.uiautomator2.server&quot;},{&quot;installState&quot;:&quot;sameVersionInstalled&quot;,&quot;appPath&quot;:&quot;/Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk&quot;,&quot;appId&quot;:&quot;io.appium.uiautomator2.server.test&quot;}]
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Server packages are not going to be (re)installed
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waiting up to 30000ms for services to be available
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+?[38;5;48m[ADB]?[0m Adding packages [&quot;io.appium.settings&quot;,&quot;io.appium.uiautomator2.server&quot;,&quot;io.appium.uiautomator2.server.test&quot;] to Doze whitelist
+?[38;5;48m[ADB]?[0m Got the following command chunks to execute: [[&quot;dumpsys&quot;,&quot;deviceidle&quot;,&quot;whitelist&quot;,&quot;+io.appium.settings&quot;,&quot;;&quot;,&quot;dumpsys&quot;,&quot;deviceidle&quot;,&quot;whitelist&quot;,&quot;+io.appium.uiautomator2.server&quot;,&quot;;&quot;,&quot;dumpsys&quot;,&quot;deviceidle&quot;,&quot;whitelist&quot;,&quot;+io.appium.uiautomator2.server.test&quot;,&quot;;&quot;]]
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+?[38;5;48m[ADB]?[0m apksigner stdout: Signer #1 certificate DN: CN=Igor
+?[38;5;48m[ADB]?[0m Signer #1 certificate SHA-256 digest: 53d4e73e09cd0ea7ea2e88c9c51e9f395d5e8d4d01618f6dae209fdd87edc6ca
+?[38;5;48m[ADB]?[0m Signer #1 certificate SHA-1 digest: 9d6db6c1d238836e06008676a60b67e05fd21c9d
+?[38;5;48m[ADB]?[0m Signer #1 certificate MD5 digest: da754353640e73f5162a3eb2caf74632
+?[38;5;48m[ADB]?[0m 
+?[38;5;48m[ADB]?[0m '/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk' is signed with a non-default certificate
+?[38;5;48m[ADB]?[0m Getting package info for 'my.android.calc'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package my.android.calc'
+?[38;5;48m[ADB]?[0m App '/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk' is not installed
+?[38;5;48m[ADB]?[0m Installing '/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 help'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 features'
+?[38;5;48m[ADB]?[0m The application at '/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk' will not be cached, because the device under test has confirmed the support of streamed installs
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 install /Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk'
+?[38;5;48m[ADB]?[0m The installation of 'mobiCalculatorApp.apk' took 221ms
+?[38;5;48m[ADB]?[0m Install command stdout: Performing Streamed Install
+?[38;5;48m[ADB]?[0m Success
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Performing shallow cleanup of automation leftovers
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m No obsolete sessions have been detected (socket hang up)
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Starting UIAutomator2 server 7.0.7
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Using UIAutomator2 server from '/Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.7.apk' and test from '/Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waiting up to 30000ms for UiAutomator2 to be online...
+?[38;5;48m[ADB]?[0m Creating ADB subprocess with args: [&quot;-P&quot;,&quot;5037&quot;,&quot;-s&quot;,&quot;emulator-5554&quot;,&quot;shell&quot;,&quot;am&quot;,&quot;instrument&quot;,&quot;-w&quot;,&quot;-e&quot;,&quot;disableAnalytics&quot;,&quot;true&quot;,&quot;io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner&quot;]
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/status' to command name 'getStatus'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m socket hang up
+?[38;5;96m[Instrumentation]?[0m io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/status' to command name 'getStatus'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m socket hang up
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/status' to command name 'getStatus'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 200: {&quot;sessionId&quot;:&quot;None&quot;,&quot;value&quot;:{&quot;message&quot;:&quot;UiAutomator2 Server is ready to accept commands&quot;,&quot;ready&quot;:true}}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m The initialization of the instrumentation process took 2087ms
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/session' to command name 'createSession'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /session] to [POST http://127.0.0.1:8200/session] with body: {&quot;capabilities&quot;:{&quot;firstMatch&quot;:[{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;automationName&quot;:&quot;UIAutomator2&quot;,&quot;avd&quot;:&quot;Pixel&quot;,&quot;platformVersion&quot;:&quot;14&quot;,&quot;app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;,&quot;platform&quot;:&quot;LINUX&quot;,&quot;webStorageEnabled&quot;:false,&quot;takesScreenshot&quot;:true,&quot;javascriptEnabled&quot;:true,&quot;databaseEnabled&quot;:false,&quot;networkConnectionEnabled&quot;:true,&quot;locationContextEnabled&quot;:false,&quot;warnings&quot;:{},&quot;desired&quot;:{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;automationName&quot;:&quot;UIAutomator2&quot;,&quot;avd&quot;:&quot;Pixel&quot;,&quot;platformVersion&quot;:&quot;14&quot;,&quot;app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;},&quot;deviceName&quot;:&quot;emulator-5554&quot;,&quot;deviceUDID&quot;:&quot;emulator-5554&quot;,&quot;appPackage&quot;:&quot;my.android.calc&quot;}],&quot;alwaysMatch&quot;:{}}}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 200: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;capabilities&quot;:{&quot;firstMatch&quot;:[{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;automationName&quot;:&quot;UIAutomator2&quot;,&quot;avd&quot;:&quot;Pixel&quot;,&quot;platformVersion&quot;:&quot;14&quot;,&quot;app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;,&quot;platform&quot;:&quot;LINUX&quot;,&quot;webStorageEnabled&quot;:false,&quot;takesScreenshot&quot;:true,&quot;javascriptEnabled&quot;:true,&quot;databaseEnabled&quot;:false,&quot;networkConnectionEnabled&quot;:true,&quot;locationContextEnabled&quot;:false,&quot;warnings&quot;:{},&quot;desired&quot;:{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;automationName&quot;:&quot;UIAutomator2&quot;,&quot;avd&quot;:&quot;Pixel&quot;,&quot;platformVersion&quot;:&quot;14&quot;,&quot;app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;},&quot;deviceName&quot;:&quot;emulator-5554&quot;,&quot;deviceUDID&quot;:&quot;emulator-5554&quot;,&quot;appPackage&quot;:&quot;my.android.calc&quot;}],&quot;alwaysMatch&quot;:{}},&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;}}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Determined the downstream protocol as 'W3C'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/appium/device/pixel_ratio] with no body
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/appium/device/system_bars' to command name 'getSystemBars'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/appium/device/system_bars] with no body
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/window/current/size' to command name 'getWindowSize'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/window/current/size] with no body
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/appium/device/info] with no body
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys power'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 200: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:2.75}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 200: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;height&quot;:2220,&quot;width&quot;:1080}}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 200: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;statusBar&quot;:66}}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Screen already unlocked, doing nothing
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Starting 'my.android.calc/my.android.calc.MainActivity and waiting for 'my.android.calc/my.android.calc.MainActivity'
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start -W -n my.android.calc/my.android.calc.MainActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 200: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;androidId&quot;:&quot;fcb7e3c6672f3490&quot;,&quot;apiVersion&quot;:&quot;26&quot;,&quot;bluetooth&quot;:null,&quot;brand&quot;:&quot;google&quot;,&quot;carrierName&quot;:&quot;Android&quot;,&quot;displayDensity&quot;:440,&quot;locale&quot;:&quot;en_US&quot;,&quot;manufacturer&quot;:&quot;Google&quot;,&quot;model&quot;:&quot;Android SDK built for arm64&quot;,&quot;networks&quot;:[{&quot;capabilities&quot;:{&quot;SSID&quot;:null,&quot;linkDownBandwidthKbps&quot;:102400,&quot;linkUpstreamBandwidthKbps&quot;:51200,&quot;networkCapabilities&quot;:&quot;NET_CAPABILITY_MMS,NET_CAPABILITY_SUPL,NET_CAPABILITY_FOTA,NET_CAPABILITY_IMS,NET_CAPABILITY_CBS,NET_CAPABILITY_IA,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED&quot;,&quot;signalStrength&quot;:-2147483648,&quot;transportTypes&quot;:&quot;TRANSPORT_CELLULAR&quot;},&quot;detailedState&quot;:&quot;CONNECTED&quot;,&quot;extraInfo&quot;:&quot;epc.tmobile.com&quot;,&quot;isAvailable&quot;:true,&quot;isConnected&quot;:true,&quot;isFailover&quot;:false,&quot;isRoaming&quot;:false,&quot;state&quot;:&quot;CONNECTED&quot;,&quot;subtype&quot;:13,&quot;subtypeName&quot;:&quot;LTE&quot;,&quot;type&quot;:0,&quot;typeName&quot;:&quot;MOBILE&quot;},{&quot;capabilities&quot;:{&quot;SSID&quot;:null,&quot;linkDownBandwidthKbps&quot;:1048576,&quot;linkUpstreamBandwidthKbps&quot;:1048576,&quot;n...
+?[38;5;48m[ADB]?[0m Waiting up to 20000ms for activity matching pkg: 'my.android.calc' and activity: 'my.android.calc.MainActivity' to be focused
+?[38;5;48m[ADB]?[0m Possible activities, to be checked: 'my.android.calc.MainActivity', 'my.android.calc.my.android.calc.MainActivity'
+?[38;5;48m[ADB]?[0m Getting focused package and activity
+?[38;5;48m[ADB]?[0m Running '/Users/alexandra/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window windows'
+?[38;5;48m[ADB]?[0m Found package: 'my.android.calc' and fully qualified activity name : 'my.android.calc.MainActivity'
+?[38;5;16m[AppiumDriver@5237]?[0m New AndroidUiautomator2Driver session created successfully, session 66f7f935-33ac-4c9a-842d-217e94532e73 added to master session list
+?[38;5;16m[AppiumDriver@5237]?[0m Event 'newSessionStarted' logged at 1715872961420 (18:22:41 GMT+0300 (Moscow Standard Time))
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Cached the protocol value 'W3C' for the new session 66f7f935-33ac-4c9a-842d-217e94532e73
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Responding to client with driver.createSession() result: {&quot;capabilities&quot;:{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;automationName&quot;:&quot;UIAutomator2&quot;,&quot;avd&quot;:&quot;Pixel&quot;,&quot;platformVersion&quot;:&quot;8.0.0&quot;,&quot;app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;,&quot;platform&quot;:&quot;LINUX&quot;,&quot;webStorageEnabled&quot;:false,&quot;takesScreenshot&quot;:true,&quot;javascriptEnabled&quot;:true,&quot;databaseEnabled&quot;:false,&quot;networkConnectionEnabled&quot;:true,&quot;locationContextEnabled&quot;:false,&quot;warnings&quot;:{},&quot;desired&quot;:{&quot;platformName&quot;:&quot;ANDROID&quot;,&quot;automationName&quot;:&quot;UIAutomator2&quot;,&quot;avd&quot;:&quot;Pixel&quot;,&quot;platformVersion&quot;:&quot;14&quot;,&quot;app&quot;:&quot;/Users/alexandra/Desktop/cohort38e-qap/QA38_AppiumFirstTest/src/test/resources/mobiCalculatorApp.apk&quot;},&quot;deviceName&quot;:&quot;emulator-5554&quot;,&quot;deviceUDID&quot;:&quot;emulator-5554&quot;,&quot;appPackage&quot;:&quot;my.android.calc&quot;,&quot;pixelRatio&quot;:&quot;2.75&quot;,&quot;statBarHeight&quot;:66,&quot;viewportRect&quot;:{&quot;left&quot;:0,&quot;top&quot;:66,&quot;width&quot;:1080,&quot;height&quot;:2154},&quot;deviceApiLevel&quot;:26,&quot;deviceManufacturer&quot;:&quot;Google&quot;,&quot;deviceModel&quot;:&quot;Android SDK built for arm64&quot;,&quot;deviceScreenSize&quot;:&quot;1080x2220&quot;,&quot;deviceScreenDensity&quot;:440}}
+?[38;5;0m[HTTP]?[0m &lt;-- POST /session 200 3872 ms - 1035
+?[38;5;0m[HTTP]?[0m 
+?[38;5;0m[HTTP]?[0m ?[37m--&gt;?[39m ?[37mPOST?[39m ?[37m/session/66f7f935-33ac-4c9a-842d-217e94532e73/timeouts?[39m
+?[38;5;0m[HTTP]?[0m {&quot;implicit&quot;:10000}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Calling AppiumDriver.timeouts() with args: [null,null,null,null,10000,&quot;66f7f935-33ac-4c9a-842d-217e94532e73&quot;]
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m W3C timeout argument: {&quot;implicit&quot;:10000}}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Set implicit wait to 10000ms
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Responding to client with driver.timeouts() result: null
+?[38;5;0m[HTTP]?[0m &lt;-- POST /session/66f7f935-33ac-4c9a-842d-217e94532e73/timeouts 200 2 ms - 14
+?[38;5;0m[HTTP]?[0m 
+?[38;5;0m[HTTP]?[0m ?[37m--&gt;?[39m ?[37mPOST?[39m ?[37m/session/66f7f935-33ac-4c9a-842d-217e94532e73/element?[39m
+?[38;5;0m[HTTP]?[0m {&quot;using&quot;:&quot;id&quot;,&quot;value&quot;:&quot;my.android.calc:id/b021&quot;}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Calling AppiumDriver.findElement() with args: [&quot;id&quot;,&quot;my.android.calc:id/b021&quot;,&quot;66f7f935-33ac-4c9a-842d-217e94532e73&quot;]
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waiting up to 10000 ms for condition
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 1075 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 1620 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 2142 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 2664 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 3193 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 3715 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 4238 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 4765 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 5293 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 5842 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 6387 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 6906 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 7428 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 7947 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 8469 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 8987 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Waited for 9508 ms so far
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Matched '/element' to command name 'findElement'
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Proxying [POST /element] to [POST http://127.0.0.1:8200/session/fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a/element] with body: {&quot;strategy&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;my.android.calc:id/b021&quot;,&quot;context&quot;:&quot;&quot;,&quot;multiple&quot;:false}
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Got response with status 404: {&quot;sessionId&quot;:&quot;fb123a8e-4c8d-420d-a9d7-9d86eb9afe8a&quot;,&quot;value&quot;:{&quot;error&quot;:&quot;no such element&quot;,&quot;message&quot;:&quot;An element could not be located on the page using the given search parameters&quot;,&quot;stacktrace&quot;:&quot;io.appium.uiautomator2.common.exceptions.ElementNotFoundException: An element could not be located on the page using the given search parameters\n\tat io.appium.uiautomator2.handler.FindElement.safeHandle(FindElement.java:63)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.chann...
+?[38;5;112m[W3C]?[0m Matched W3C error code 'no such element' to NoSuchElementError
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m Encountered internal error running command: NoSuchElementError: An element could not be located on the page using the given search parameters.
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m     at AndroidUiautomator2Driver.findElOrEls (/Users/alexandra/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m     at processTicksAndRejections (node:internal/process/task_queues:95:5)
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m     at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+?[38;5;32m[AndroidUiautomator2Driver@9be6 (66f7f935)]?[0m     at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+?[38;5;0m[HTTP]?[0m &lt;-- POST /session/66f7f935-33ac-4c9a-842d-217e94532e73/element 404 10026 ms - 814
+?[38;5;0m[HTTP]?[0m 
 </pre>
 </span>
 </div>
@@ -229,7 +500,7 @@ Session ID: 11c4334b-62f7-48a9-b49e-dec076eb5aec
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.7</a> at May 15, 2024, 4:58:20 PM</p>
+<a href="http://www.gradle.org">Gradle 8.7</a> at May 16, 2024, 6:22:51 PM</p>
 </div>
 </div>
 </body>
