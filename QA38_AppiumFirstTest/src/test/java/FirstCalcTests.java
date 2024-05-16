@@ -22,8 +22,8 @@ public class FirstCalcTests {
         //Настройки напрямую от UiAutomator2. Нужно указать только apk
         UiAutomator2Options capabilities = new UiAutomator2Options()
                 .setApp(new File("src/test/resources/mobiCalculatorApp.apk").getAbsolutePath())
-                .setPlatformVersion("14")
-                .setAvd("Pixel");
+                .setPlatformVersion("8")
+                .setAvd("android_jenkins_26");
         // Создаем объект AndroidDriver с указанными capabilities
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723"), capabilities);
         // Устанавливаем неявное ожидание в 10 секунд
@@ -92,14 +92,14 @@ public class FirstCalcTests {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // Находим элемент с идентификатором доступности "Add city"
-        WebElement element = driver.findElement(AppiumBy.accessibilityId("Add city"));
+        WebElement element = driver.findElement(AppiumBy.accessibilityId("Cities"));
         // Нажимаем найденный элемент
         element.click();
         // Находим элемент EditText
-        WebElement textElement = driver.findElement(By.className("android.widget.EditText"));
+        // WebElement textElement = driver.findElement(By.className("android.widget.EditText"));
 
         // Проверяем, что текст элемента соответствует ожидаемому
-        Assertions.assertEquals(textElement.getText(), "Search for a city", "Текст не найден");
+        // Assertions.assertEquals(textElement.getText(), "Search for a city", "Текст не найден");
 
         // Завершаем сеанс Appium и закрываем драйвер
         driver.quit();

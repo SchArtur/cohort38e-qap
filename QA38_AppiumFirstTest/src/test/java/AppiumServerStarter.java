@@ -9,19 +9,14 @@ public class AppiumServerStarter {
     public static void startServer() {
         // Создаем объект AppiumServiceBuilder
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
-
         // Устанавливаем путь к Appium
         builder.withAppiumJS(new File("/opt/homebrew/bin/appium"));
-
         // Устанавливаем порт для сервера Appium
         builder.withIPAddress("127.0.0.1").usingPort(4723);
-
         // Создаем экземпляр AppiumDriverLocalService
         service = AppiumDriverLocalService.buildService(builder);
-
         // Запускаем сервер Appium
         service.start();
-
         // Выводим сообщение о запуске сервера
         if (service.isRunning()) {
             System.out.println("Appium Server started");
