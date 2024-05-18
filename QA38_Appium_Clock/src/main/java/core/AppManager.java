@@ -49,7 +49,8 @@ public class AppManager {
         // Завершаем сеанс Appium и закрываем драйвер
         driver.quit();
         // Завершаем работу эмулятора
-        Runtime.getRuntime().exec("adb -s emulator-5554 emu kill");
+        String adbPath = "/Users/alexandra/Library/Android/sdk/platform-tools/adb"; // Абсолютный путь к ADB
+        Runtime.getRuntime().exec(adbPath + " -s emulator-5554 emu kill");
         // Останавливаем сервер Appium
         AppiumServerStarter.stopServer();
     }
